@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "ruby rtm.rb > out"
+ruby rtm.rb > out
