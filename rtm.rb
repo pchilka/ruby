@@ -1,4 +1,5 @@
 # Generates a tab separated file of <req_id> <scenario> <feature_file> rows
+# Looks for a directory called "features" in current directory that should have all the .feature files
 # Author : Pradeep Chilka
 # Created: 19th May 2017
 
