@@ -1,0 +1,2 @@
+#!/bin/bash -f
+ruby trello.rb > cards.csv

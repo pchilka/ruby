@@ -1,0 +1,50 @@
+[
+  {
+    "id": "55303d5b488f616437374289",
+    "name": "To Do",
+    "closed": false,
+    "idBoard": "55303d418c625a210a18f75f",
+    "pos": 65535,
+    "subscribed": false
+  },
+  {
+    "id": "55303d6f31484bdad62012c7",
+    "name": "Phone Screen",
+    "closed": false,
+    "idBoard": "55303d418c625a210a18f75f",
+    "pos": 131071,
+    "subscribed": false
+  },
+  {
+    "id": "55303d783a869e4bc6266dc4",
+    "name": "SRA/Client Interview",
+    "closed": false,
+    "idBoard": "55303d418c625a210a18f75f",
+    "pos": 196607,
+    "subscribed": false
+  },
+  {
+    "id": "558d7fb1ff1865653d7849a3",
+    "name": "Approved by SRA/Client",
+    "closed": false,
+    "idBoard": "55303d418c625a210a18f75f",
+    "pos": 229375,
+    "subscribed": false
+  },
+  {
+    "id": "55f32302f257fd7a3e992a6c",
+    "name": "OnBoarding",
+    "closed": false,
+    "idBoard": "55303d418c625a210a18f75f",
+    "pos": 245759,
+    "subscribed": false
+  },
+  {
+    "id": "55303d8ef031c5220a5c53dc",
+    "name": "Parking Lot",
+    "closed": false,
+    "idBoard": "55303d418c625a210a18f75f",
+    "pos": 262143,
+    "subscribed": false
+  }
+]

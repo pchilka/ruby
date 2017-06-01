@@ -1,0 +1,43 @@
+{
+  "id": "55303d418c625a210a18f75f",
+  "name": "PPSITS Recruiting",
+  "desc": "",
+  "descData": null,
+  "closed": false,
+  "idOrganization": null,
+  "pinned": false,
+  "url": "https://trello.com/b/bLRjUcgl/ppsits-recruiting",
+  "shortUrl": "https://trello.com/b/bLRjUcgl",
+  "prefs": {
+    "permissionLevel": "private",
+    "voting": "members",
+    "comments": "members",
+    "invitations": "members",
+    "selfJoin": false,
+    "cardCovers": true,
+    "cardAging": "regular",
+    "calendarFeedEnabled": false,
+    "background": "blue",
+    "backgroundColor": "#0079BF",
+    "backgroundImage": null,
+    "backgroundImageScaled": null,
+    "backgroundTile": false,
+    "backgroundBrightness": "unknown",
+    "canBePublic": true,
+    "canBeOrg": true,
+    "canBePrivate": true,
+    "canInvite": true
+  },
+  "labelNames": {
+    "green": "Test Engineer",
+    "yellow": ".NET Developer",
+    "orange": "Agile PM",
+    "red": "Not Hired",
+    "purple": "Business Analyst",
+    "blue": "Java Developer",
+    "sky": "",
+    "lime": "",
+    "pink": "Scrum Master",
+    "black": "Duplicate entry"
+  }
+}
