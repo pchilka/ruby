@@ -1,5 +1,5 @@
 filepath = "pb.txt";
-IO.foreach(filepath).each do |line|
+IO.foreach(filepath) do |line|
 	fields = line.split /\t/;
 	ikey   = fields[0];
 	iid    = fields[1];
