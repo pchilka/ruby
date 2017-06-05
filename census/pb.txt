@@ -1,0 +1,165 @@
+Issue key	Issue id	Issue Type	Assignee	Status	Sprint	Requirement	Requirement2	Requirement3	Requirement4	Summary	
+CEN-1686	131730	Story	cdyess	Backlog	CEN Sprint 9	10.10.20				Admin Portal - Auth User accesses Applicant Management	
+CEN-1688	131750	Story	cdyess	Backlog	CEN Sprint 9	10.10.20				Admin Portal - Sort and Filter Incomplete Applicant Report	
+CEN-1687	131746	Story	cdyess	Backlog	CEN Sprint 9	10.10.20				Admin Portal - Search Incomplete Applicant Report	
+CEN-1622	129783	Story	mburnett	Closed	CEN Sprint 7	10.10.20				Design Email auditing (save all emails sent) (3)	
+CEN-1689	131756	Story	cdyess	Backlog	CEN Sprint 9	10.10.20				Admin Portal - Incomplete applicant name on report is link to download PDF of incomplete application	
+CEN-54	122855	Story	jmoore	Closed	CEN Sprint 7	10.20.100	10.20.110			Applicant Portal provides access to Application Statuses prior to DAPPS status return	
+CEN-1447	125910	Story	jvega	Closed	CEN Sprint 6	10.20.140				"Develop form: ""Record of Employee Address""  (CD-415)"	
+CEN-1450	125913	Story		Closed	CEN Sprint 6	10.20.140				Develop wireframe for form: SF-85 Questionnaire for Non-Sensitive Position	
+CEN-1448	125911	Story	mpatel	Closed	CEN Sprint 6	10.20.140				"Develop form:  FLD-168 ""New Employee Data""  - English"	
+CEN-1380	124184	Story	cdyess	Closed	CEN Sprint 7	10.20.140				Onboarding - Save/Print PDF Version of BC-170D	
+CEN-1385	124189	Story	cdyess	Awaiting QA	CEN Sprint 8	10.20.140				Onboarding - Save/Print PDF Version of SF-85	
+CEN-97	122898	Story	mpatel	Closed	CEN Sprint 7	10.20.150				Application - Under 18 warning message	
+CEN-13	122814	Story	mpatel	Closed	CEN Sprint 7	10.20.50				User Views Career Site	
+CEN-1714	138265	Story	dsanchez	Awaiting QA	CEN Sprint 8	10.20.50				Show Informational Links on Applicant Portal	
+CEN-1673	131608	Story	mpatel	Closed	CEN Sprint 8	10.20.60				Registration - Log Out of Applicant Portal 	
+CEN-68	122869	Story		Closed	CEN Sprint 7	10.20.60				Applicant Portal provides candidate with access to logout	
+CEN-26	122827	Story	croberson	Closed	CEN Sprint 7	10.20.60				Registration - CSOD - User can reset their password before login	
+CEN-22	122823	Story	mpatel	Closed	CEN Sprint 7	10.20.60				Registration(CSOD) - Candidate Logs into Applicant Portal	
+CEN-19	122820	Story	mpatel	Closed	CEN Sprint 7	10.20.60				User/Prospective Candidate Chooses to Login or Register	
+CEN-1679	131615	Story	rbeery	Awaiting QA	CEN Sprint 8	10.20.60				Register - Do not allow anyone to login to our system from our login screen 	
+CEN-1656	131391	Story	mpatel	Closed	CEN Sprint 7	10.20.60.1				Registration - Build infrastructure to save applicant related authorization and authentication information	
+CEN-1662	131594	Story	mpatel	Closed	CEN Sprint 7	10.20.60.1				Registration: Create Email Notifications Infrastructure	
+CEN-1621	129782	Story	mpatel	Closed	CEN Sprint 7	10.20.60.1				Change email provider (1)	
+CEN-1667	131599	Story	mpatel	Closed	CEN Sprint 8	10.20.60.1				Registration - Handle CSOD redirection to landing page for login 	
+CEN-1678	131614	Story	rbeery	Awaiting QA	CEN Sprint 8	10.20.60.1				Register - Do not allow anyone to register from our registration 	
+CEN-1623	129784	Story	dsanchez	Awaiting QA	CEN Sprint 8	10.20.60.1				Email auditing (save all emails sent) (3)	
+CEN-1096	123900	Story	mpatel	Closed	CEN Sprint 7	10.20.80				Application - Candidate enters language and transportation info (Sections C-E/Page 8)	
+CEN-1086	123890	Story	mpatel	Closed	CEN Sprint 6	10.20.80				Application - Candidate enters federal employment info (Section B/Page 5)	
+CEN-1612	129747	Story	msherburne	Closed	CEN Sprint 7	10.20.80				Application - User Interface Hardening	
+CEN-105	122906	Story	mpatel	Closed	CEN Sprint 7	10.20.80				Application - Electronic Signature	
+CEN-1091	123895	Story	mpatel	Closed	CEN Sprint 6	10.20.80				"Application - Candidate enters previous work experience info (Section C, Page 6-7)"	
+CEN-43	122844	Story	michaelsherburne	Closed		10.20.80				Applicant Portal provides access to start application process	
+CEN-1060	123864	Story	michaelsherburne	Closed		10.20.80				Candidate sees Application Introduction	
+CEN-116	122917	Story	mpatel	Closed	CEN Sprint 7	10.30.10				Registration - Password/Account Validation	
+CEN-110	122911	Story	mpatel	Closed	CEN Sprint 7	10.30.10				Registration - Required Fields	
+CEN-141	122942	Story	mpatel	Closed	CEN Sprint 7	10.30.20				Cornerstone - Registration Page Email fields Validate Email	
+CEN-1670	131602	Story	rbeery	In Dev	CEN Sprint 8	10.30.30				Registration - Determine OU to Authorization Mapping	
+CEN-143	122944	Story		Closed	CEN Sprint 7	10.30.30				Registration - Verification Email Link Directs Prospective Candidate to Candidate Verification Login	
+CEN-81	122882	Story	jmoore	Awaiting QA	CEN Sprint 8	10.30.30				Registration - Handle Expired email verification 	
+CEN-155	122956	Story	jmoore	Closed	CEN Sprint 7	10.30.40	10.40.180			Application - Update after submission	
+CEN-157	122958	Story	mpatel	Closed	CEN Sprint 6	10.40.10				Application enables candidate to apply for multiple positions (Section B/Page 4)	
+CEN-193	122995	Story	jmoore	Closed	CEN Sprint 7	10.40.118				Application captures Veteran's preference for candidates (Section A/Page 3)	
+CEN-232	123034	Story		Closed		10.40.130				Candidate sees Privacy Act and Public Burden statements (Intro Page)	
+CEN-224	123026	Story	dsanchez	Closed	CEN Sprint 6	10.40.140				"Application - Candidate indicates race, origin and disability status (Section F-G/Page 9)"	
+CEN-1118	123922	Story	stephaniehigh	Closed		10.40.150				100 : Candidate saves incomplete application	
+CEN-1117	123921	Story	stephaniehigh	Closed		10.40.160				"98 : Candidate accesses incomplete, previously saved application"	
+CEN-199	123001	Story		Closed	CEN Sprint 6	10.40.170				Candidate edits application	
+CEN-1741	139663	Story		Backlog	CEN Sprint 9	10.40.190				Applicant Status - Email to Applicant on Status Update - DAPPS	
+CEN-1410	125379	Story		Backlog	CEN Sprint 9	10.40.190				Applicant Status - Email to Applicant on Status Update - Internal R&A	
+CEN-167	122968	Story	mpatel	Closed	CEN Sprint 6	10.40.20				Application allows user to specify interest in Supervisory positions (Section B/Page 4)	
+CEN-177	122978	Story	mpatel	Closed	CEN Sprint 7	10.40.40				Application - Candidate specifies how they found out about job and education(Section F-G Page 9)	
+CEN-186	122988	Story	mpatel	Closed	CEN Sprint 7	10.40.70				Application - Application provides access to Veteran's preference information (Section A/Page 3)	
+CEN-241	123043	Story	jmoore	Closed	CEN Sprint 7	10.40.100	10.40.110	10.40.120	10.40.90	Application - Candidate uploads attachments to application	
+CEN-1780	140975	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.983				Application - SSN shown when candidate enters number on application	
+CEN-1718	138739	Story	jmoore	Closed	CEN Sprint 7	10.40.985				Application - Dropdowns for Country and State	
+CEN-277	123080	Story	dsanchez	Awaiting QA	CEN Sprint 8	10.40.990				Application - Language Fluency Warning Message	
+CEN-1697	131918	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.990				"Application - Warning for not selecting ""Field Data Collection"""	
+CEN-1698	131920	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.990				Application - Available Hours alerts and functionality	
+CEN-279	123082	Story	msherburne	Backlog	CEN Sprint 8	10.40.991				Application - Required Fields	
+CEN-1742	139762	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.991				Application - Required Currently Available OR End Date for Employment Fields	
+CEN-1743	139807	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.991				Application - Employer Phone number or phone number unknown required	
+CEN-269	123072	Story	dsanchez	Awaiting QA	CEN Sprint 8	10.40.994				Application - Spellcheck Candidate input	
+CEN-246	123048	Story	jmoore	Closed	CEN Sprint 8	10.40.995				Application - electronic disclosure statement	
+CEN-248	123050	Story	jmoore	Closed	CEN Sprint 8	10.40.996				Application - Candidate sees application instructions and assessment info	
+CEN-237	123039	Story	mpatel	Closed	CEN Sprint 7	10.40.997				Application - Double entered fields	
+CEN-264	123067	Story	msherburne	Closed	CEN Sprint 7	10.40.998				Application - Hide/Show fields based on candidate's previous selections	
+CEN-1592	128741	Story	jmoore	Closed	CEN Sprint 7	10.40.998				Application - Govt. Agency Dropdown for Employment	
+CEN-239	123041	Story	msherburne	Backlog	CEN Sprint 8	10.40.999				Application - Candidate sees info (i) available where necessary	
+CEN-1699	131923	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.999				Application - Alien Registration number validation and Info button	
+CEN-275	123078	Story	mpatel	Closed	CEN Sprint 7	10.40.992	10.50.10			Application - Reminders to complete sections on E-sign page	
+CEN-299	123103	Story		Backlog		10.50.10				Application - Submission/Validation of application	
+CEN-303	123107	Story	msherburne	In Dev	CEN Sprint 8	10.50.20				Application -Unique applicant validation (SSN)	
+CEN-962	123766	Story		Closed	CEN Sprint 7	110.50.80				Applicant Portal - Solution logs user out after 15 min/Dependent on CSOD	
+CEN-1677	131613	Story	rbeery	Backlog	CEN Sprint 8	110.50.999				Register - Handle 15 minute inactivity – need to coordinate between CSOD and R&A 	
+CEN-1065	123869	Story		Closed		130.60 System/Capabilities				"Candidate enters name, address and contact info (Section A/Page 1)"	
+CEN-310	123114	Story	olebedev	In QA	CEN Sprint 8	20.10.10				Assessments - Employee Portal allows user to add pre-employment practice assessment and assessment questions	
+CEN-312	123116	Story		Closed	CEN Sprint 8	20.10.20				Assessments - (NFR) Employee Portal allows user to manage pre-employment practice assessment and assessment questions	
+CEN-314	123118	Story	olebedev	In QA	CEN Sprint 8	20.10.30				Assessments - Employee Portal allows user to modify pre-employment practice assessment and assessment questions	
+CEN-337	123141	Story		Closed	CEN Sprint 6	20.20.10				Assessment - See Assessment Instructions and Next Steps at the top of the page during assessment(s)	
+CEN-1615	129761	Story	asenn	Closed	CEN Sprint 7	20.20.10				Dev Story - Design of Administration of Assessment 	
+CEN-327	123131	Story	adamsenn	Closed		20.20.20				Applicant Portal provides access to Practice Employment Assessments	
+CEN-340	123144	Story	adamsenn	Closed		20.20.40				Allow applicant to take an unlimited amount of unscored practice assessments	
+CEN-345	123149	Story	adamsenn	Closed		20.30.20				Applicant Portal provides access to assessments	
+CEN-353	123157	Story	mpatel	Closed	CEN Sprint 6	20.30.30				Assessment - Allow Applicants to initiate and complete assessments	
+CEN-357	123161	Story	mpatel	Closed	CEN Sprint 6	20.30.50				Assessment - sections should be presented in a randomized order	
+CEN-362	123166	Story	mpatel	Closed	CEN Sprint 6	20.30.60				Assessment - Certify at the end of each assessment that person who took assessment is same person as on the job application (view verbiage)	
+CEN-1695	131794	Story	asenn	Backlog	CEN Sprint 9	20.40.10				Admin Portal - Auth User Accesses Assessment Management	
+CEN-379	123183	Story		Closed	CEN Sprint 8	20.40.10				Assessments - (NFR) Ability to maintain multiple assessments	
+CEN-444	123248	Story	asenn	Awaiting QA	CEN Sprint 8	20.40.100				Assessments - Allow applicants who indicate interest in supervisory positions to complete different assessments/additional assessment questions	
+CEN-393	123197	Story	mpatel	Closed	CEN Sprint 6	20.40.60				Assessment - Applicant takes designated assessments	
+CEN-384	123188	Story	mpatel	Closed	CEN Sprint 6	20.40.60				Assessment - Present the appropriate assessment(s) based on response to the job interest question (13) on form BC-170D	
+CEN-401	123205	Story	mpatel	Closed	CEN Sprint 6	20.40.80				Assessment - Require applicant to complete D-377 assessment	
+CEN-422	123226	Story	mpatel	Closed	CEN Sprint 6	20.40.90				Assessment - Require applicant to complete the D-376 assessment	
+CEN-461	123265	Story	adamsenn	Closed		20.60.10				Provide timed assessments	
+CEN-502	123306	Story	mpatel	Closed	CEN Sprint 6	20.60.100				Display message when time left and applicant clicks Next button	
+CEN-467	123271	Story		Closed	CEN Sprint 7	20.60.20				Enforce a configurable time period for completion of an assessment.	
+CEN-469	123273	Story	mpatel	Closed	CEN Sprint 7	20.60.30				Assessments - Configurable time for completion of each section of the Field Data Collection (D-376) assessment	
+CEN-471	123275	Story	mpatel	Closed	CEN Sprint 7	20.60.40				Assessments - Configurable time period for each section of the Field Outreach/Office (D-377) assessment	
+CEN-473	123277	Story	adamsenn	Closed		20.60.50				Provide timer during assessments which shows the time remaining in current section	
+CEN-478	123282	Story	mpatel	Closed	CEN Sprint 6	20.60.60				Assessment - Toggle timer visibility during assessment	
+CEN-487	123291	Story		Closed	CEN Sprint 7	20.60.70				Configure visual and audible warnings of time remaining during assessments	
+CEN-492	123296	Story	adamsenn	Closed		20.60.80				Display message and gray out all answers if time expires in an assessment	
+CEN-496	123300	Story	mpatel	Closed	CEN Sprint 6	20.60.90				Assessment - Applicant cannot go back to timed page after leaving it	
+CEN-507	123311	Story	adamsenn	Closed		20.70.10				Provide notice to applicant when attempting to close browser with incomplete assessment	
+CEN-511	123315	Story	mpatel	Closed	CEN Sprint 6	20.70.20				Assessment - Stop at end of section and resume uncompleted assessment	
+CEN-517	123321	Story	mpatel	Closed	CEN Sprint 6	20.70.30				Allow applicant to update assessment responses prior to submission	
+CEN-521	123325	Story	mpatel	Closed	CEN Sprint 6	20.70.40				"Assessment - Keep applicants in the pool as Ineligible, with dashboard status specifying ""No assessment taken""."	
+CEN-527	123331	Story	mpatel	Closed	CEN Sprint 6	20.70.50				Assessment - Require applicants to electronically attest that they answered all questions on assessment	
+CEN-532	123336	Story	mpatel	Closed	CEN Sprint 6	20.70.60				Assessment - Electronic Signature information on assessment e-sign (certify that same person whose name is on the application) (table)	
+CEN-553	123357	Story	jmoore	Awaiting PO Action	CEN Sprint 8	20.80.110				Application - Display disclaimer regarding Veteran's Preference points	
+CEN-543	123347	Story	mpatel	Closed	CEN Sprint 7	20.80.60				Assessments - Score reading assessment on a range of 0 - 20	
+CEN-545	123349	Story	mpatel	Closed	CEN Sprint 7	20.80.70				Assessments - Score all versions of the Field Data Collection Assessment on a range of 0-88	
+CEN-547	123351	Story	mpatel	Closed	CEN Sprint 7	20.80.80				Assessments - Score all versions of the Field Outreach/Office Assessment on a range of 0-88	
+CEN-549	123353	Story		Closed	CEN Sprint 7	20.80.90				Produce computed score for Field Data Collection Assessment	
+CEN-1691	131767	Story	mpatel	Closed	CEN Sprint 7	70.10.10				Admin Portal - Cornerstone Welcome Page	
+CEN-1690	131760	Story	croberson	Closed	CEN Sprint 7	70.10.10				Admin Portal - Cornerstone employee logs into cornerstone	
+CEN-1696	131801	Story		Backlog	CEN Sprint 9	70.10.40				Admin Portal - Entity Level Applicant Management	
+CEN-1694	131783	Story	rbeery	Backlog	CEN Sprint 9	70.10.40				Admin Portal - The Admin Portal	
+CEN-1782	141045	Story		Backlog	CEN Sprint 9	80.30.20				Admin Portal - Excel Export of Applicant Management Report 	
+CEN-1537	127664	Story	khalleran	Backlog	CEN Sprint 9	90.20.20				Onboarding - Transmit and Receive Data and Errors to/from DAPPS (Sprint 8)	
+CEN-1379	124183	Story	khalleran	Closed	CEN Sprint 7	90.20.20				Onboarding - Transmit and Receive Data and Errors to/from DAPPS (Sprint 7)	
+CEN-1530	127638	Story	jvega	In Dev	CEN Sprint 8	90.20.20				Development: DAPPS/Bi-directional communication (Sprint 8)	
+CEN-1542	127669	Story	jvega	Closed	CEN Sprint 7	90.20.20				R&A Manager: Manage & Connect all integration modules	
+CEN-1543	127670	Story	jvega	Closed	CEN Sprint 7	90.20.20				Packaging/Unpackaging: Retrieve files and data from repositories	
+CEN-1740	139647	Story	khalleran	Backlog	CEN Sprint 8	90.20.20				DAPPS - status engine	
+CEN-1739	139646	Story	jvega	Closed	CEN Sprint 8	90.20.20				JSON Creator - DAPPS	
+CEN-1536	127663	Story	khalleran	Ready	CEN Sprint 8	90.20.20				CSOD Applicant Conversion: Auto Transfer of Applicant Status	
+CEN-1535	127662	Story	khalleran	In Dev	CEN Sprint 8	90.20.20				Applicant Status Engine: Auto Update Applicant Status for Portal	
+CEN-1544	127671	Story	khalleran	Awaiting QA	CEN Sprint 8	90.20.20				File & Data Encryption: Encrypt Files	
+CEN-1598	129179	Story	jvega	Closed	CEN Sprint 7	90.30.120				"Onboarding - Submit ""Direct Deposit Authorization""/FLD-1199 Form"	
+CEN-1596	129177	Story	jvega	Closed	CEN Sprint 7	90.30.120				"Onboarding - Submit ""Direct Deposit Authorization""/FLD-1199 Form - Applicant Selection "	
+CEN-1377	124181	Story	dsanchez	Closed	CEN Sprint 6	90.30.120				"Onboarding - Submit ""Direct Deposit Authorization""/FLD-1199 Form - English"	
+CEN-1382	124186	Story	jvega	Closed	CEN Sprint 7	90.30.20				"Onboarding - Submit ""Declaration of Federal Employment""/OF-306 Form"	
+CEN-1602	129326	Story	jvega	Closed	CEN Sprint 7	90.30.50				"Onboarding - Submit ""New Employee Data""/FLD168 Form"	
+CEN-1595	129176	Story	mpatel	Closed	CEN Sprint 6	90.30.50				"Develop form:  FLD-168 ""New Employee Data"" - Spanish"	
+CEN-1383	124187	Story	jvega	Closed	CEN Sprint 7	90.30.50				"Onboarding - Submit ""New Employee Data""/FLD168 Form "	
+CEN-1605	129330	Story	cdyess	Closed	CEN Sprint 7	90.30.70				"Onboarding - Submit ""Record of Employee Address""/CD-415 Form - Applicant Selection"	
+CEN-1372	124176	Story	cdyess	Closed	CEN Sprint 7	90.30.70				"Onboarding - Submit ""Record of Employee Address""/CD-415 Form"	
+CEN-1529	127637	Story	dsanchez	Awaiting QA	CEN Sprint 8	90.30.999				"Onboarding - Submit ""Questionnaire for Non-Sensitive Positions""/SF-85 Form (Sprint 7)"	
+CEN-1521	127573	Defect	mpatel	Closed	CEN Sprint 6					500 Error Clicking on Cont to Assessments	
+CEN-1731	139018	Defect	msherburne	Closed	CEN Sprint 7					Selective Service/Delete Attachment	
+CEN-1736	139130	Defect	asenn	Closed	CEN Sprint 7					Assessment Timeout/Goes to wrong location	
+CEN-1619	129779	Story	mburnett	Closed	CEN Sprint 7					"•	Remediate build warnings or suppress false-positives (2)"	
+CEN-1618	129778	Story	asenn	Closed	CEN Sprint 7					"•	Get builds to DEV-INT happening correctly, remediate issues (2)"	
+CEN-1620	129780	Story	mburnett	Closed	CEN Sprint 7					Enable/require SSL in appropriate environments (1)	
+CEN-1617	129777	Story	asenn	Closed	CEN Sprint 7					Review RoslynSecurityGuard and resolve any issues (2)	
+CEN-1709	137297	Story	mpatel	Closed	CEN Sprint 7					Add Topshelf to Windows Service	
+CEN-1711	137551	Defect		Backlog						Application - Availability chart showing offscreen for mobile devices	
+CEN-1701	136721	Defect	asenn	Ready For Testing	CEN Sprint 7					Unable to Complete Registration Process	
+CEN-1713	137555	Defect	ahutchison	Closed	CEN Sprint 7					Are you taken to the Transportation Page? - Font Issue	
+CEN-1710	137550	Defect	cdyess	Closed	CEN Sprint 7					There is an error in the Availability check boxes that needs to be changed to select all boxes and not just afternoon or the logic needs to indicate that all are selected.	
+CEN-1726	138884	Defect	ahutchison	Closed	CEN Sprint 7					"D-376 ""thinks"" it times out even though it didn't"	
+CEN-1712	137554	Defect	mpatel	Closed	CEN Sprint 7					Tester received an error message that the Place of Birth State or Country maximum length is 6	
+CEN-1737	139279	Defect		Backlog	CEN Sprint 9					BC-170 PDF/default country/states merge into PDF when no values entered (data is probably saving with defaults)	
+CEN-1784	141487	Story	mburnett	Backlog	CEN Sprint 8					Caching Issue	
+CEN-1781	140999	Story		Backlog	CEN Sprint 9					Solution Clean Up for Prod	
+CEN-1783	141486	Story	dsanchez	Awaiting QA	CEN Sprint 8					Persist Elma Error Logs	
+CEN-1732	139019	Story	khalleran	Awaiting QA	CEN Sprint 8					TECHNICAL-DAPPS Integration Test Stub	
+CEN-1738	139297	Defect	jvega	Closed	CEN Sprint 8					"OF-306 Form: NULL Dates Returning ""1/1/2000"""	
+CEN-1785	142130	Story	asenn	Closed	CEN Sprint 8					Save ELMAH errors to database to capture HTTP 500 errors during load testing	
+CEN-1789	143102	Defect		Backlog	CEN Sprint 9					If you select male and make a selection for military service   and switch to female the selections are not reset	
+CEN-1788	143100	Defect		Backlog	CEN Sprint 9					Attachements For Vetrans Preference is not being saved. When I am in the esign page there is the notification to add the documents and when I navigate between the application pages I see the alert	
+CEN-1786	142575	Story	asenn	In Dev	CEN Sprint 8					BLOCKED: fix woff2 404 issues (again)	
+CEN-1787	143073	Defect	croberson	Backlog	CEN Sprint 9					Password Characters 	
