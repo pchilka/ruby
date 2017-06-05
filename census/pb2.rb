@@ -1,6 +1,11 @@
-filepath = "pb2.txt";
+FILE = "pb2.txt";
+COL1 = 200;
+COL2 = 800;
+
+puts "<html>";
+puts "<body>";
 puts "<table>";
-File.readlines(filepath, '<eof>').each do |line|
+File.readlines(FILE, '<eof>').each do |line|
 #	print ">>>>>>>>> #{line}\n";
 	fields = line.split /\t/;
 	ikey   = fields[0].strip;
@@ -16,25 +21,26 @@ File.readlines(filepath, '<eof>').each do |line|
 	summary= fields[10];
 	desc   = fields[11];
 	desc.gsub!(/\n\n+/,"\n") if !desc.nil?
-	#print "#{reqid1}, #{ikey}, #{itype}, #{assign}, #{status}, #{sprint}\n";
-	#print "#{reqid2}, #{ikey}, #{itype}, #{assign}, #{status}, #{sprint}\n" if reqid2 != "";
-	#print "#{reqid3}, #{ikey}, #{itype}, #{assign}, #{status}, #{sprint}\n" if reqid3 != "";
-	#print "#{reqid4}, #{ikey}, #{itype}, #{assign}, #{status}, #{sprint}\n" if reqid4 != "";
-	puts "<tr>";
-	puts "<td align=\"right\">REQUIREMENT:</td><td>#{reqid1}";
+	puts "<tr style=\"background-color:powderblue\">";
+	puts "<td style=\"text-align:right\" valign=\"top\">REQUIREMENT ID:</td>";
+    puts "<td valign=\"top\">#{reqid1}";
 	puts ", #{reqid2}" if reqid2 !="";
 	puts ", #{reqid3}" if reqid3 !="";
 	puts ", #{reqid4}" if reqid4 !="";
 	puts "</td></tr>";
 	puts "<tr>";
-	puts "<td  align=\"right\" valign=\"top\">JIRA ID:</td><td>#{ikey}</td>";
+	puts "<td style=\"text-align:right\">JIRA ISSUE KEY:</td><td valign=\"top\">#{ikey}</td>";
 	puts "</tr>";
 	puts "<tr>";
-	puts "<td align=\"right\" valign=\"top\">SUMMARY:</td><td>#{summary}</td>";
+	puts "<td style=\"text-align:right\">JIRA ISSUE TYPE:</td><td valign=\"top\">#{itype}</td>";
 	puts "</tr>";
 	puts "<tr>";
-	puts "<td align=\"right\" valign=\"top\">ACCEPTANCE:</td><td><pre>#{desc}</pre></td>";
+	puts "<td style=\"text-align:right\">SUMMARY:</td><td valign=\"top\">#{summary}</td>";
+	puts "</tr>";
+	puts "<tr>";
+	puts "<td style=\"text-align:right\" valign=\"top\">DESCRIPTION:</td><td><pre>#{desc}</pre></td>";
 	puts "</tr>";
 end
-puts "<table>";
-
+puts "</table>";
+puts "</body>";
+puts "</html>";
