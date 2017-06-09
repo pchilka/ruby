@@ -1,0 +1,2988 @@
+Issue key	Issue id	Issue Type	Assignee	Status	Sprint	Requirement	Summary	Acceptance Scenario ID	Acceptance Scenario	Automated?	<eol>
+CEN-1686	131730	Story	cdyess	Backlog	CEN Sprint 9	10.10.20	Admin Portal - Auth User accesses Applicant Management				<eol>
+								10.10.20.1686.a	"Scenario: Applicant Management Link navigates to Applicant Management report
+Given I am in the Admin Portal
+And I see the Applicant Management link
+When I press the Applicant Management link
+Then the system will take me to the Applicant Management Report
+And the system will display a Kendo grid with up to 10,000 applicants with incomplete application/Assessments
+And the grid will show a summary of items shown
+i.e ""1-25 of 10,000 items"""		<eol>
+								10.10.20.1686.b	"Scenario: Alert when applicant management report shows less than the total number applicants with incomplete applications/assessments
+Given I am in the Admin Portal
+And I see the Applicant Management link
+And there are more than 10,000 applicants with incomplete applications/assessments
+When I press the Applicant Management link
+Then the system will take me to the Applicant Management Report
+And the system will display a Kendo grid with up to 10,000 applicants with incomplete application/Assessments
+And the system will display an alert , ""There are more than 10,000 records of applicants with incomplete applications/assessments, please refine your search to find the information needed."""		<eol>
+								10.10.20.1686.c	"Scenario: Ability to select another page of results on report of applicants with incomplete application/assessments
+Given I am on the Applicant Management report
+And there are more than 25 records to display
+When I press a page number on the grid
+Then the system will show the results on the page I selected"		<eol>
+								10.10.20.1686.d	"Scenario: Ability to go to next page of results on report of applicants with incomplete application/assessments
+Given I am on the Applicant Management report
+And there are more than 25 records to display
+When I press the right arrow button on the grid
+Then the system will show the next page of results"		<eol>
+								10.10.20.1686.e	"Scenario: Ability to go to previous page of results on report of applicants with incomplete application/assessments
+Given I am on the Applicant Management report
+And there are more than 25 records to display
+And I have cycled to page 2 or higher of results
+When I press the left arrow button on the grid
+Then the system will show the previous page of results"		<eol>
+								10.10.20.1686.f	"Scenario: Ability to go to last page of results on report of applicants with incomplete application/assessments
+Given I am on the Applicant Management report
+And there are more than 25 records to display
+When I press the last page button on the grid
+Then the system will show the last page of results"		<eol>
+								10.10.20.1686.g	"Scenario: Ability to go to first page of results on report of applicants with incomplete application/assessments
+Given I am on the Applicant Management report
+And there are more than 25 records to display
+And I have cycled to page 2 or higher of results
+When I press the first page button on the grid
+Then the system will show the first page of results"		<eol>
+CEN-1688	131750	Story	cdyess	Backlog	CEN Sprint 9		Admin Portal - Sort and Filter Incomplete Applicant Report				<eol>
+								10.10.20.1688.a	"Scenario: Columns offered in the Applicant Management Kendo Grid
+Given I am on the Applicant Management Report
+When I verify the columns in the grid
+Then the grid will show:
+Full Name
+City
+State
+Zip
+Applicant Profile Status
+Activity Data
+Email
+Last Access Date"		<eol>
+								10.10.20.1688.b	"Scenario: Applicant Management report may be filtered by Full Name Column
+Given I am on the Applicant Management Report
+When I press the Full Name column header
+Then the system will sort the report results by Full Name"		<eol>
+								10.10.20.1688.c	"Scenario: Applicant Management report may be filtered by City Column
+Given I am on the Applicant Management Report
+When I press the City column header
+Then the system will sort the report results by City"		<eol>
+								10.10.20.1688.d	"Scenario: Applicant Management report may be filtered by State Column
+Given I am on the Applicant Management Report
+When I press the State column header
+Then the system will sort the report results by State"		<eol>
+								10.10.20.1688.e	"Scenario: Applicant Management report may be filtered by Zip Code Column
+Given I am on the Applicant Management Report
+When I press the Zip Code column header
+Then the system will sort the report results by Zip Code"		<eol>
+								10.10.20.1688.f	"Scenario: Applicant Management report may be filtered by Applicant Profile Status Column
+Given I am on the Applicant Management Report
+When I press the Applicant Profile Status column header
+Then the system will sort the report results by Applicant Profile Status"		<eol>
+								10.10.20.1688.g	"Scenario: Applicant Management report may be filtered by Activity Data Column
+Given I am on the Applicant Management Report
+When I press the Activity Data column header
+Then the system will sort the report results by Activity Data"		<eol>
+								10.10.20.1688.h	"Scenario: Applicant Management report may be filtered by Email Column
+Given I am on the Applicant Management Report
+When I press the Email column header
+Then the system will sort the report results by Email "		<eol>
+								10.10.20.1688.i	"Scenario: Applicant Management report may be filtered by Last Access Date Column
+Given I am on the Applicant Management Report
+When I press the Last Access Date column header
+Then the system will sort the report results by Last Access Date"		<eol>
+								10.10.20.1688.j	"Scenario: Applicant Management report may be filtered by Combination of column filters
+Given I am on the Applicant Management Report
+And I have activated a previous column filter
+When I activate an additional column filter
+Then the system will sort the report results by the previous flter(s)
+And the last activated filter"		<eol>
+CEN-1687	131746	Story	cdyess	Backlog	CEN Sprint 9		Admin Portal - Search Incomplete Applicant Report				<eol>
+								10.10.20.1687.a	"Scenario: Ability to search incomplete applicant records by email
+Given I am an authorized user on the Applicant Management Report
+And I have entered a character string in the email search field
+When I press the ""Search"" button
+Then the system will only display records with emails matching that email search string"		<eol>
+								10.10.20.1687.b	"Scenario: Ability to search incomplete applicant records by last name
+Given I am an authorized user on the Applicant Management Report
+And I have entered a character string in the Last Name search field
+When I press the ""Search"" button
+Then the system will only display records with Last Names matching that Last Name search string"		<eol>
+								10.10.20.1687.c	"Scenario: Ability to search incomplete applicant records by zip code
+Given I am an authorized user on the Applicant Management Report
+And I have entered a number string in the zip code search field
+When I press the ""Search"" button
+Then the system will only display records with zip codes matching that zip code search string"		<eol>
+								10.10.20.1687.d	"Scenario: Ability to search incomplete applicant records by state
+Given I am an authorized user on the Applicant Management Report
+And I have entered a character string in the state search field
+When I press the ""Search"" button
+Then the system will only display records with state matching that state search string"		<eol>
+								"10.10.20.1687.e
+"	"Scenario: Ability to search incomplete applicant records by combination of search options
+Given I am an authorized user on the Applicant Management Report
+And I have entered a character string in multiple search fields
+When I press the ""Search"" button
+Then the system will only display records with values relevant to the search specifications"		<eol>
+								10.10.20.1687.f	"Scenario: Alert when applicant management report search results show less than the total number applicants with incomplete applications/assessments applicable to that search
+Given I am in the Applicant Management report
+And I have entered search parameters
+And there are more than 10,000 applicants with incomplete applications/assessments relevant to that search
+When I press the Search button
+Then the system will display a report with up to 10,000 applicants with incomplete application/Assessments relevant to the search parameters
+And the system will display an alert , ""There are more than 10,000 records of applicants with incomplete applications/assessments, please refine your search to find the information needed."""		<eol>
+CEN-1689	131756	Story	cdyess	Backlog	CEN Sprint 9	10.10.20	Admin Portal - Incomplete applicant name on report is link to download PDF of incomplete application				<eol>
+								10.10.20.1689.a	"Scenario: Name of Applicant on Applicant Management Report is a hyperlink to applicant detail
+Given I am on the Applicant Management report
+When I press an Applicant Name hyperlink
+Then the system will take me to a detailed read-only report, in the same tab, for the information that applicant has provided
+And the SSN and birthdate will be masked if provided by the applicant"		<eol>
+								10.10.20.1689.b	"Scenario: Back to Applicant management link navigates user back to Applicant Management from Applicant Detail
+Given I am on the Applicant Detail
+When I press Back to Applicant Management
+Then the system will take me back to Applicant Management report"		<eol>
+CEN-54	122855	Story	jmoore	Closed	CEN Sprint 7	10.20.100	Applicant Portal provides access to Application Statuses prior to DAPPS status return				<eol>
+								10.20.100.54.a	"Scenario: First status for candidate R&A entry
+Given I am a prospective candidate
+And I have just registered to R&A for the first time
+When l Submit my Zip Code for registration completion
+Then the system must display the following status:
+""Application Not Yet Started - You have created an account, but not yet filled out the application"""		<eol>
+								10.20.100.54.b	"Scenario: status for candidate that has started but not completed application
+Given I have started my application
+AND I have not completed my application
+When I press ""Save and Exit"" on an Application page
+Then the system must display the following status on my R&A applicant portal:
+""Application in Progress - You have not completed the application"""		<eol>
+								10.20.100.54.c	"Scenario: status for applicant that completes application but not required assessments
+Given I have e-signed my application
+When I press ""Save and Exit"" on an Application page
+Then the system must display the following status on my R&A applicant portal:
+""Application in Progress - You have not taken all of the required assessments for the position(s) you have indicated on the application."""		<eol>
+								10.20.100.54.d	"Scenario: status for applicant that completes required assessments
+Given I have completed all my required assessments
+When I press ""E-Sign and Continue"" on my last assessment
+Then the system must display the following status on my R&A applicant portal:
+""Application Submitted - You have submitted your application and all required assessments."""		<eol>
+CEN-1447	125910	Story	jvega	Closed	CEN Sprint 6	10.20.140	"Develop form: ""Record of Employee Address""  (CD-415)"	10.20.140.a	"
+ Applicant Completes CD415
+English
+Given that I have passed my background check
+And Onboarding Forms become available
+And the culture setting on my browser is English
+When I access the form, I see English text
+Then I can enter my data in English
+And submit it.
+"		<eol>
+CEN-1448	125911	Story	mpatel	Closed	CEN Sprint 6	10.20.140	"Develop form:  FLD-168 ""New Employee Data""  - English"	10.20.140.a 	"Applicant Completes FLD-168 - English
+Given that I have passed my background check
+And Onboarding Forms become available
+And the culture setting on my browser is English
+When I access the form, I see English text
+Then I can enter my data in English
+And submit it."		<eol>
+CEN-1380	124184	Story	cdyess	Closed	CEN Sprint 7	10.20.140	Onboarding - Save/Print PDF Version of BC-170D	10.20.140.1814.a	"Applicant Sees Link for PDF of BC-170D - not ready
+Given that I have completed and e-signed the BC-170D
+When I go back to the Applicant Portal
+Then I will see a link to download my copy
+And am notified that my copy is still generating."		<eol>
+								10.20.140.1814.b	"Applicant Clicks Link for PDF of BC-170D
+Given that I have completed and e-signed the BC-170D
+When I go back to the Applicant Portal
+And enough time has passed for my copy to be generated
+Then I can click on the link to download my copy for saving or printing."		<eol>
+CEN-1385	124189	Story	cdyess	Awaiting QA	CEN Sprint 8	10.20.140	Onboarding - Save/Print PDF Version of SF-85	10.20.140.a	"Applicant Saves PDF of SF-85
+Given that I have completed the SF-85
+When I submit my form
+Then I am taken back to the Applicant Portal
+And see indication that a copy of my form is being generated
+And can access my copy once it is generated and I can save it."		<eol>
+								10.20.140.b 	"Applicant Prints PDF of SF-85
+Given that I have completed the SF-85
+When I submit my form
+Then I am taken back to the Applicant Portal
+And see indication that a copy of my form is being generated
+And can access my copy once it is generated and I can print it."		<eol>
+CEN-97	122898	Story	mpatel	Closed	CEN Sprint 7	10.20.150	Application - Under 18 warning message	10.20.150.656.a	"Scenario : Warning if applicant under 18
+Given I am on the application
+And I enter a birthdate signifying an age under 18
+And I save this page
+Then I will see a warning"		<eol>
+											<eol>
+CEN-13	122814	Story	mpatel	Closed	CEN Sprint 7	10.20.50	User Views Career Site	" 10.20.50.13.a
+"	"Scenario: the Career Site Page view
+Given I am on the career site page
+When I view the page title
+Then the title will read ""Career Site"""		<eol>
+								10.20.50.13.b	"Scenario: User can access the self service links to the portal
+Given I am on the career site
+Then I can access the Help Section"		<eol>
+								" 10.20.50.13.c
+"	"Scenario: User can view information on types of roles
+Given I am on the career site
+Then I can view details about the Job"		<eol>
+								"  10.20.50.13.e
+"	"Scenario: User can access the self service links to the portal
+Given I am on the career site
+Then I can access the FAQs"		<eol>
+											<eol>
+CEN-1673	131608	Story	mpatel	Closed	CEN Sprint 8	10.20.60	Registration - Log Out of Applicant Portal 	10.20.60.82.a	"
+Scenario: Logout link
+Given I am logged into the Applicant Portal
+Then I can see logout
+
+"		<eol>
+								10.20.60.82.b	"Scenario: Logout and on Career site
+Given I am logged into the Applicant Portal
+And I  logout
+Then I want to be on the career site
+"		<eol>
+								10.20.60.82.c	"Scenario: Logout and login
+Given I am logged into the Applicant Portal
+And I  logout
+And I login to the Applicant Portal
+Then I am on the Applicant Portal"""		<eol>
+CEN-26	122827	Story	croberson	Closed	CEN Sprint 7	10.20.60	Registration - CSOD - User can reset their password before login	10.20.60.32.a	"
+Scenario: Forgot Password form
+Given I select """"Forgot my password,"""" 
+Then I am prompted for login email address.
+"		<eol>
+								10.20.60.32.b	"
+Scenario: Forgot Password erorrs
+ Given I select """"Forgot my password,"""" 
+And I am prompted the candidate for their email
+When I select a password change verification email with an empty email field
+Then I will see the error """"Email Information required.""""
+"		<eol>
+								10.20.60.32.c	"
+Scenario: Forgot Password erorrs 
+Given I select """"Forgot my password,"""" 
+AND I am prompted for the email
+When I selects a password change verification email with an invalid email syntax 
+Then I see confirmation message
+And I do not receive an email
+"		<eol>
+								10.20.60.32.f	"
+Scenario: Validate email lik
+ Given I received a password change email
+And I initiate the password change from the link in the email 
+Then I must be directed to Pre Login Password Change page. 
+
+"		<eol>
+								10.20.60.32.g	"Scenario: incorrect syntax for password change
+Given I am on the Pre Login Password Change Page
+And the password entered does not satisfy syntax requirement
+ When I Submit
+Then the system will show error"		<eol>
+								10.20.60.32.h	"
+Scenario: Password required error 
+ Given I am  on the Pre Login Password Change Page
+And I submit a blank form
+Then the system will generate an alert, """"Please provide a matching password in each field."""" 
+"		<eol>
+								10.20.60.32.i	"
+Scenario: Password mismatch
+Given I am  on the Pre Login Password Change Page, when the candidate submits a form with unmatched passwords
+Then I see an error message """"Please provide a matching password in each field."""" 
+"		<eol>
+								10.20.60.32.j	"
+Scenario: Password provided
+Given I am on the Pre Login Password Change Page
+And I  submit a form with matching passwords
+Then I will direct candidate to login with the new password.
+"		<eol>
+CEN-22	122823	Story	mpatel	Closed	CEN Sprint 7	10.20.60	Registration(CSOD) - Candidate Logs into Applicant Portal	10.20.60.29.a	"
+Scenario: Complete subsequent login with errors
+Given I want to Login to access the Applicant Portal
+And I  do not specify the login cridentials 
+And I want to login
+Then I see an error message 
+"		<eol>
+								10.20.60.29.b	"
+Scenario :Complete subsequent login with errors on emailaddress
+Given I want to Login to access the Applicant Portal
+And I specify invalid login credentials for email address
+And I want to login
+Then I must see an error message
+
+"		<eol>
+								10.20.60.29.c	"
+Scenario :Complete first time login with errors on password
+Given I  want to access Applicant Portal without starting from the email link for first time login 
+And I specify invalid login credentials for password
+And I want to login
+Then I must see an error message
+"		<eol>
+								10.20.60.29.d	"
+Scenario :Complete login
+Given I  want to access Applicant Portal without starting from the email link for first time login 
+And I specify valid login credentials for email address
+Then I must be taken to the Applicant Portal'
+"		<eol>
+CEN-19	122820	Story	mpatel	Closed	CEN Sprint 7	10.20.60	User/Prospective Candidate Chooses to Login or Register	10.20.60.19.a	"Scenario: Career Site has access to Register
+Given I am a user on the Career Site When I select, ""First Time Applicants Create a Profile Here,""
+Then the system directs me to the registration page"		<eol>
+								10.20.60.19.b	"Scenario: Career Site has access for current candidates to login
+Given I am a user on the Career Site When I select, ""Returning Applicants Log In Here,""
+Then the system directs me to the Applicant Portal page for Login."		<eol>
+											<eol>
+CEN-1096	123900	Story	mpatel	Closed	CEN Sprint 7	10.20.80	Application - Candidate enters language and transportation info (Sections C-E/Page 8)	10.20.80.456.a	"Given I have provided Language and Transportation
+And I click Next
+Then I can proceed forward to the Race and Origin"		<eol>
+								10.20.80.456.b	"Given I have provided Language and Transportation
+And I click Save Exit
+Then I am on the Applicant Portal"		<eol>
+								10.20.80.456.c	"Given I have provided Language and Transportation
+And I click Previous
+Then I am on the Emplyment Experience
+And my previous selections are still visible"		<eol>
+								10.20.80.456.d	"Given I have not provided Language and Transportation
+And I click Previous
+Then I must see errors for all required fields"		<eol>
+								10.20.80.456.e	"Given I have not provided Language and Transportation
+And I click Next
+Then I must see errors for all required fields"		<eol>
+								10.20.80.456.f	"Given I have not provided Language and Transportation
+And I click Save and Exit
+Then I must see errors for all required fields"		<eol>
+CEN-1086	123890	Story	mpatel	Closed	CEN Sprint 6	10.20.80	Application - Candidate enters federal employment info (Section B/Page 5)	10.20.80.454.a	"Given I am on the Applicant Portal
+And I want to complete my Federal Employment Details 
+Then I am able to specify the Federal Employment Details"		<eol>
+								10.20.80.454.b	"Given I am on the Applicant Portal
+And I have unsatisfied Federal Employment Fields
+Then I will see an error on save"		<eol>
+CEN-105	122906	Story	mpatel	Closed	CEN Sprint 7	10.20.80	Application - Electronic Signature	"10.20.80.763.a
+"	"Scenario: Candidate is able to see this Section
+Given I am on the application
+Then I must see this section"		<eol>
+								"10.20.80.763.b
+"	"Scenario: Electronic Signature Warning
+Given I am on the application
+And I press ""Electronically Sign""
+Then I must see this Warning"		<eol>
+								"10.20.80.763.c
+"	"Scenario: Decline proceeding with Electronic Signature
+Given I am on the application
+And I see Electronic Signature warning
+And I press Cancel
+Then the system must close warning"		<eol>
+								"10.20.80.763.d
+
+"	"Scenario: Proceed with Electronic Signature
+Given I am on the application
+And I see Electronic Signature warning
+ When I press OK
+Then the system will show these items below ""Electronically Sign"" button
+Signature/Date Table with applicant's name and the date they signed
+New Paragraph in bold - ""Thank you for providing your electronic signature!"""		<eol>
+								"10.20.80.763.e
+"	"Scenario: Continue with application process
+Given I am on the application Electronic signature Page
+When I press ""Continue Application Process""
+Then the system will navigate me to the applicant portal"		<eol>
+CEN-1091	123895	Story	mpatel	Closed	CEN Sprint 6	10.20.80	"Application - Candidate enters previous work experience info (Section C, Page 6-7)"	10.20.80.455.a	"Given I have provided Employment Experience
+And I click Save 
+Then I am able to save"		<eol>
+								10.20.80.455.b	"Given I have provided Employment Experience
+And I click Save 
+Then I am able to save"		<eol>
+								10.20.80.455.c	"Given I have provided Employment Experience
+And I click Previous
+Then I am on the Available Hours
+And my previous selections are still visible"		<eol>
+								10.20.80.455.e	"Given I have not provided Employment Experience
+And I click Next
+Then I must see errors for all required fields"		<eol>
+								10.20.80.455.f	"Given I have not provided Employment Experience
+And I click Save and Exit
+Then I must see errors for all required fields"		<eol>
+CEN-43	122844	Story	michaelsherburne	Closed		10.20.80	Applicant Portal provides access to start application process	10.20.80.36.a	"Scenario: Choice to select positions
+Given I am a new candidate when I log into the applicant portal
+Then I have choice for positions"		<eol>
+								10.20.80.36.b	"Scenario: Choice to select positions
+Given I am a new candidate when I log into the applicant portal
+And I specify Decinnial Positions
+Then I can start my application"		<eol>
+CEN-1060	123864	Story	michaelsherburne	Closed		10.20.80	Candidate sees Application Introduction	10.20.80.450.a	"Scenario: Display OMB text
+Given I am on the Applicant Portal
+Then I see expanded sections for Duties, Training, When you will work, Pay, How can you qualify for census work?, Census jobos!, and the Privacy Act and Burden Statement"		<eol>
+								10.20.80.450.b	"Scenario: OMB text hiding
+Given I am on the Applicant Portal
+And I see expanded sections for Duties, Training, When you will work, Pay, How can you qualify for census work?, Census jobs!, and the Privacy Act and Burden Statement
+Then I can collapse sections to hide text"		<eol>
+											<eol>
+CEN-116	122917	Story	mpatel	Closed	CEN Sprint 7	10.30.10	Registration - Password/Account Validation	10.30.10.26.a	"Scenario: Password Mismatch
+Given I am want to complete Registration
+And I have provided account creation information
+And I specify mismatched Passwords
+Then I must see an error message"		<eol>
+								10.30.10.26.b	"Scenario: Password Format Incorrectly
+Given I am want to complete Registration
+And I have provided account creation information
+And I specify invalid format <Passwords>
+Then I must see an error message"		<eol>
+								10.30.10.26.c	"Scenario: existing account cannot be recreated
+Given I want to complete Registration
+And I have provided an email matching that of an existing account
+ And have satisfied all other fields
+And I submit
+Then I must see an error message"		<eol>
+											<eol>
+CEN-141	122942	Story	mpatel	Closed	CEN Sprint 7	10.30.20	Cornerstone - Registration Page Email fields Validate Email	10.30.20.80.a	"Scenario: Invalid Email Syntax
+Given I am want to complete Registration
+And I  have provided  account creation information
+And I specify illformed <email address>
+Then I must see an error message 
+"	yes	<eol>
+								10.30.20.80.b	"Scenario: Email Address Mismatch
+Given I am want to complete Registration
+And I  have provided  account creation information
+And I specify mismatched email address 
+Then I must see an error message "	yes	<eol>
+								10.30.20.80.c	"Scenario :  Email Address match
+Given I am want to complete Registration
+And I  have provided  account creation information
+And I specify matched email address 
+Then I must be able to provide password"	yes	<eol>
+								10.30.20.80.d	"Scenario: Email already existing
+Given I am want to complete Registration
+And I  have provided  account creation information 
+And I provide an exisitng email address
+And I complete account creation
+Then I should see an error'"	yes	<eol>
+											<eol>
+CEN-1670	131602	Story	rbeery	In Dev	CEN Sprint 8	10.30.30	Registration - Determine OU to Authorization Mapping	"10.30.30.1670.a
+"	"Scenario: Error on entering more than 5 digits into registration zip code field
+Given I am on the zip code entry screen for registration
+When I enter 6 or more numbers into the zip code field
+Then the system will show alert in red, ""Please enter valid zip code. Zip code must have exactly 5 digits (xxxxx)""
+And the system will not allow me to submit this entry to complete my registration"		<eol>
+								10.30.30.1670.b	"Scenario: Error on entering letters into registration zip code field
+Given I am on the zip code entry screen for registration
+When I enter letters into the zip code field
+Then the system will show alert in red, ""Please enter valid zip code. Zip code must have exactly 5 digits (xxxxx)""
+And the system will not allow me to submit this entry to complete my registration"		<eol>
+								"10.30.30.1670.c
+"	"Scenario: Error on entering special characters into registration zip code field
+Given I am on the zip code entry screen for registration
+When I enter special characters into the zip code field
+Then the system will show alert in red, ""Please enter valid zip code. Zip code must have exactly 5 digits (xxxxx)""
+And the system will not allow me to submit this entry to complete my registration"		<eol>
+								"10.30.30.1670.d
+"	"Scenario: Error on entering special characters into registration zip code field
+Given I am on the zip code entry screen for registration
+When I enter 4 or less numbers into the zip code field
+Then the system will show alert in red, ""Please enter valid zip code. Zip code must have exactly 5 digits (xxxxx)""
+And the system will not allow me to submit this entry to complete my registration"		<eol>
+								"10.30.30.1670.e
+"	"Scenario: Ability to submit 5 numbers on registration zip code field and complete registration
+Given I am on the zip code entry screen for registration
+When I enter 5 numbers into the zip code field
+Then the system will allow me to submit this entry without error 
+And the system will navigate me to the R&A applicant portal"		<eol>
+CEN-143	122944	Story		Closed	CEN Sprint 7	10.30.30	Registration - Verification Email Link Directs Prospective Candidate to Candidate Verification Login	10.30.30.81.a	"
+Scenario: First Time Login for Email validation
+Given I  want to access the Applicant Portal for the first time 
+And I  have clicked on the link in email 
+Then I must be taken to the Candidate Verification Login
+
+
+
+"		<eol>
+								10.30.30.81.b	"Scenario: Complete first time login with errors
+Given I am on the Candidate Verification Login
+And I  do not specify the login cridentials 
+And I want to login
+Then I see an error message "		<eol>
+CEN-81	122882	Story	jmoore	Awaiting QA	CEN Sprint 8	10.30.30	Registration - Handle Expired email verification 	10.30.30.600.a	"Scenario: expired email Link
+Given I have an expired registration Email Validation Link
+And I click on the link
+And I am taken to R&A
+Then I see an Invlaid Link message
+And I see a link to resend the email link"		<eol>
+								10.30.30.600.b	"Scenario: new link sent
+Given I resend an account confirmation link via email from R&A page
+ Then the system will send a new link"		<eol>
+								10.30.30.600.c	"Scenario: new link goes to zip code verification page
+Given I access a resent confirmation link before it expires
+Then the link will take me to the R&A zip code verification screen"		<eol>
+											<eol>
+CEN-155	122956	Story	jmoore	Closed	CEN Sprint 7	10.30.40	Application - Update after submission	"10.30.40.657.a
+"	"Scenario: Applicant can change address
+Given I have submitted an application
+And I need to change my address
+And my status is not ""hired""
+And I have accessed my application
+And I update my address
+And I e-sign
+Then the solution will show validation this change was made"		<eol>
+								"10.30.40.657.b
+"	"Scenario: Edit Application button hidden for Hired user
+Given my status is hired
+And I need to change my address
+ Then button for ""Edit Application"" is hidden"		<eol>
+								"10.30.40.657.c
+"	"Scenario: Applicant can edit application after submission
+Given I have submitted an application
+And I need to edit anything but SSN or Email
+And my status is not ""hired""
+And I have accessed my application
+And I edit my application
+And I e-sign
+Then the solution will show validation this change was made"		<eol>
+								"10.30.40.657.d
+"	"Scenario: Applicant cannot edit ssn after submission
+Given I have submitted an application
+And I need to edit SSN
+And my status is not ""hired""
+And I have accessed my application
+ Then the solution will show SSN field as disabled"		<eol>
+								"10.30.40.657.e
+"	"Scenario: Applicant cannot edit ssn after submission
+Given I have submitted an application
+And I need to edit Email
+And my status is not ""hired""
+And I have accessed my application
+ Then the solution will show Email field as disabled"		<eol>
+CEN-157	122958	Story	mpatel	Closed	CEN Sprint 6	10.40.10	Application enables candidate to apply for multiple positions (Section B/Page 4)	10.40.10.84.a	"Scenario: Position Selection Section
+Given I am on the Application
+Then I must see this section"		<eol>
+								10.40.10.84.b	"Scenario: Position Selection Section Required
+Given I am on the Application
+And I want to skip section
+Then I must see an error"		<eol>
+								10.40.10.84.c	"Scenario: One Position Section Selection
+Given I am on the Application
+And I make one section selection
+Then I must see selection made"		<eol>
+								10.40.10.84.d	"Scenario: All Position Section Selections
+Given I am on the Application
+And I make all section selection
+Then I must see all selection made"		<eol>
+CEN-193	122995	Story	jmoore	Closed	CEN Sprint 7	10.40.118	Application captures Veteran's preference for candidates (Section A/Page 3)	10.40.118.92.a	"Scenario: Veteran's Preference Selection Section
+Given I am on the Application
+Then I must see this section"		<eol>
+								10.40.118.92.b	"Scenario: 12b required if 12a is yes
+Given I am on the Application
+And I input yes for 12a
+And I skip section 12b
+Then I must see an error"		<eol>
+								10.40.118.92.c	"Scenario: 12 b completed if 12a is yes
+Given I am on the Application
+And I input yes for 12a
+And I complete section 12b
+And I want to proceed
+Then I must proceed"		<eol>
+								10.40.118.92.d	"Scenario: 12b field requirements
+Given I am on the Application
+And I input unallowed data into 12b fields
+Then I must see an error"		<eol>
+								10.40.118.92.e	"Scenario: 12b field requirements
+Given I am on the Application
+And I have specified my Vetran Preference
+Then I must be able to provide any attachments"		<eol>
+CEN-232	123034	Story		Closed		10.40.130	Candidate sees Privacy Act and Public Burden statements (Intro Page)	10.40.130.104.a	"Scenario: Privacy Act Statement and Public burden
+Given I have stated my application
+Then I can see the Privacy Act Statement and Public Burden"		<eol>
+CEN-224	123026	Story	dsanchez	Closed	CEN Sprint 6	10.40.140	"Application - Candidate indicates race, origin and disability status (Section F-G/Page 9)"	10.40.140.102.a	"Scenario: Ethnicity, Race, Disability
+Given I am on the Application
+Then I must see this section"		<eol>
+								10.40.140.102.b	"Scenario: Skip Ethnicity, Race, Disability Error
+Given I am on the Application
+And I want to skip section
+Then I must see error "		<eol>
+								10.40.140.102.c	"Scenario: Ethnicity, Race, Disability Section Selection
+Given I am on the Application
+And I make section selection
+Then I must see selection made"		<eol>
+								10.40.140.102.d	"Scenario: No Disability Selection
+Given I am on the Application
+And I make no selection on Disability
+And I make selection ""None of the conditions listed above apply to me""
+And I want to submit application
+Then I must submit application"		<eol>
+CEN-199	123001	Story		Closed	CEN Sprint 6	10.40.170	Candidate edits application	10.40.170.95.a	"Scenario: Application allows edits
+Given I saved an application
+And I have accessed the saved application
+Then I can make edits"		<eol>
+CEN-1741	139663	Story		Backlog	CEN Sprint 9	10.40.190	Applicant Status - Email to Applicant on Status Update - DAPPS	"10.40.190.1410.a
+"	"Scenario: Status change Email sent when DAPPS sets status to Available
+Given I am an applicant for the US Census
+And I have submitted my application/assessments
+When DAPPS sets my status to available
+Then the system will send me the status change email."		<eol>
+								10.40.190.1410.b	"Scenario: Status change Email sent when DAPPS sets status to Selected - You have been offered a job.  You must complete the following forms for a background investigation.
+Given I am an applicant for the US Census
+When DAPPS sets my status to ""Selected - You have been offered a job.  You must complete the following forms for a background investigation.""
+Then the system will send me the status change email."		<eol>
+								10.40.190.1410.c	"Scenario: Status change Email sent when DAPPS sets status to Selected - Background forms received.  You must make an appointment to have your fingerprints taken by the vendor.
+Given I am an applicant for the US Census
+When DAPPS sets my status to ""Selected - Background forms received.  You must make an appointment to have your fingerprints taken by the vendor.""
+Then the system will send me the status change email."		<eol>
+								"10.40.190.1410.d
+"	"Scenario: Status change Email sent when DAPPS sets status to Selected - Background investigation completed.  You must complete the following forms
+Given I am an applicant for the US Census
+When DAPPS sets my status to ""Selected - Background investigation completed.  You must complete the following forms""
+Then the system will send me the status change email."		<eol>
+								"10.40.190.1410.e
+"	"Scenario: Status change Email sent when DAPPS sets status to Hired
+Given I am an applicant for the US Census
+When DAPPS sets my status to ""Hired""
+Then the system will send me the status change email."		<eol>
+								"10.40.190.1410.f
+"	"Scenario: Status change Email sent when DAPPS sets status to Ineligible
+Given I am an applicant for the US Census
+When DAPPS sets my status to ""Ineligible""
+Then the system will send me the status change email."		<eol>
+								"10.40.190.1410.g
+"	"Scenario: Status change Email sent when DAPPS sets status to Experienced
+Given I am an applicant for the US Census
+When DAPPS sets my status to Experienced
+Then the system will send me the status change email."		<eol>
+CEN-1410	125379	Story		Backlog	CEN Sprint 9	10.40.190	Applicant Status - Email to Applicant on Status Update - Internal R&A	"10.40.190.1410.a
+"	"Scenario: Status change Email sent when Candidate begins application
+Given I am a candidate on the applicant portal
+When I start my application for the first time
+Then the system will send me the status change email
+"		<eol>
+								"10.40.190.1410.b
+"	"Scenario: Status change Email sent when Candidate e-signs application
+Given I am a candidate on the application e-sign page
+When I e-sign my application
+Then the system will send me the status change email"		<eol>
+								"10.40.190.1410.c
+"	"Scenario: Status change Email sent when Candidate e-signs completion of all assessments
+Given I am an applicant on the e-sign page for assessments
+When I e-sign for completion of all assessments
+Then the system will send me the status change email"		<eol>
+CEN-167	122968	Story	mpatel	Closed	CEN Sprint 6	10.40.20	Application allows user to specify interest in Supervisory positions (Section B/Page 4)	10.40.20.86.a	"Scenario: Supervisory Position question
+Given I am on the Application
+Then I must see this section"		<eol>
+								10.40.20.86.b	"Scenario: Profile Status
+Given I am on the Application
+And I want to skip section
+Then I must submit with no section selection"		<eol>
+								10.40.20.86.c	"Scenario: Profile Status
+Given I am on the Application
+And I make section selection
+Then I must see selection made"		<eol>
+CEN-177	122978	Story	mpatel	Closed	CEN Sprint 7	10.40.40	Application - Candidate specifies how they found out about job and education(Section F-G Page 9)	10.40.40.88.a	"Scenario: Profile Status
+Given I am on the Application
+Then I must see this section"		<eol>
+								10.40.40.88.b	"Scenario: Profile Status
+Given I am on the Application
+And I want to skip section
+Then I must submit with no section selection"		<eol>
+								10.40.40.88.c	"Scenario: Profile Status
+Given I am on the Application
+And I make section selection
+Then I must see selection made"		<eol>
+CEN-186	122988	Story	mpatel	Closed	CEN Sprint 7	10.40.70	Application - Application provides access to Veteran's preference information (Section A/Page 3)	10.40.70.90.a	"Scenario: Veteran's Preference Information button
+Given I am on the Application
+Then I must see this button"		<eol>
+								10.40.70.90.b	"Scenario: Veteran's Preference Information popup
+Given I am on the Application
+And I access this button
+Then I will see this Information"		<eol>
+								10.40.70.90.c	"Scenario: Veteran's Preference Information link
+Given I am on the Application
+And I access this button
+And this pop up is displayed
+And I access this link
+Then this new tab will open"		<eol>
+CEN-241	123043	Story	jmoore	Closed	CEN Sprint 7	"10.40.75, 10.40.90, 10.40.100, 10.40.110, 10.40.120"	Application - Candidate uploads attachments to application	10.40.75.599.a	"Scenario: Ability to upload forms to application
+Given I am on the Application
+ When I upload a form to the application
+Then the system will save this file to the application
+And display the file name"		<eol>
+								10.40.75.599.b	"Scenario: Veteran's Preference documentation unattached SF-15 (10 point) warning
+Given I am on the Application
+And I select 10 point preference for veterans preference
+And I want to skip the documentation upload for SF-15
+When I press ""Next"" to proceed to the next page
+Then I must see alert"		<eol>
+								10.40.75.599.c	"Scenario: Veteran's Preference documentation unattached SF-15 (10 point derived) warning
+Given I am on the Application
+And I select 10 point derived preference for veterans preference
+And I want to skip the documentation upload for SF-15
+When I press ""Next"" to proceed to the next page
+Then I must see alert"		<eol>
+								"10.40.75.599.d
+"	"Scenario: Veteran's Preference documentation unattached SF-15 supporting documentation (10 point) warning
+Given I am on the Application
+And I select 10 point preference 
+And I want to skip the documentation upload for SF-15 supporting documentation
+When I press ""Next"" to proceed to the next page
+Then I must see alert"		<eol>
+								10.40.75.599.e	"Scenario: Veteran's Preference documentation unattached SF-15 supporting documentation (10 point derived) warning
+Given I am on the Application
+And I select 10 point derived preference 
+And I want to skip the documentation upload for SF-15 supporting documentation
+When I press ""Next"" to proceed to the next page
+Then I must see alert"		<eol>
+								10.40.75.599.f	"Scenario: Veteran's Preference documentation unattached DD-214 (5-point derived) warning
+Given I am on the Application
+And I select 5 point derived preference for veterans preference
+And I want to skip the documentation upload
+When I press ""Next"" to proceed to the next page
+Then I must see alert"		<eol>
+								10.40.75.599.g	"Scenario: Veteran's Preference documentation unattached DD-214 (sole-survivorship) warning
+Given I am on the Application
+And I select sole survivorship for veterans preference
+And I want to skip the documentation upload
+When I press ""Next"" to proceed to the next page
+Then I must see alert"		<eol>
+								10.40.75.599.h	"Scenario: Unregistered w/Selective Service Upload error
+Given I am on the application
+And I select Yes to having supporting documentation for not being in selective service
+And I do not upload documentation
+When I press ""Next"" to proceed to the next page
+Then I must see error"		<eol>
+								10.40.75.599.i	"Scenario: Buyout repayment proof DT-237 Upload Alert
+Given I am on the application
+And I select I have received this
+And I do not upload documentation
+When I press ""Next"" to proceed to the next page
+Then I must see alert"		<eol>
+								10.40.75.599.j	"Scenario: Recent SF-50 Upload Alert
+Given I am on the application
+And I select Yes I have worked with Census
+And I do not upload documentation
+When I press ""Next"" to proceed to the next page
+Then I must see error"		<eol>
+								10.40.75.599.k	"Scenario: ability to delete files prior to e-sign
+Given I am on the Application
+And I have not e-signed
+ When I upload a file to the application
+Then the system should show a delete option for that file"		<eol>
+								10.40.75.599.l	"Scenario: file is deleted from application
+Given I am on the Application
+And I have uploaded a file to the application
+And I have not e-signed
+When I press ""Delete"" for that file
+Then the system should delete the file from the application
+And show option for upload"		<eol>
+								10.40.75.599.m	"Scenario: file cannot be over 5mb
+Given I am on the Application
+When I upload a file of 5.1mb
+Then the system will show error"		<eol>
+								10.40.75.599.n	"Scenario: file can be up to 5mb
+Given I am on the Application
+When I upload a file of 5mb
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.o	"Scenario: PNG file uploads allowed
+Given I am on the Application
+When I upload a PNG file
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.p	"Scenario: GIF file uploads allowed
+Given I am on the Application
+When I upload a GIF file
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.q	"Scenario: TIF file uploads allowed
+Given I am on the Application
+When I upload a TIF file
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.r	"Scenario: JPG file uploads allowed
+Given I am on the Application
+When I upload a JPG file
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.s	"Scenario: DOC file uploads allowed
+Given I am on the Application
+When I upload a DOC file
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.t	"Scenario: DOCX file uploads allowed
+Given I am on the Application
+When I upload a DOCX file
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.u	"Scenario: PDF file uploads allowed
+Given I am on the Application
+When I upload a PDF file
+Then the system will show the file successfully uploaded"		<eol>
+								10.40.75.599.v	"Scenario: TXT file uploads allowed
+Given I am on the Application
+When I upload a TXT file
+Then the system will show the file successfully uploaded"		<eol>
+CEN-1813		Story		Awaiting QA	CEN Sprint 9	10.40.981	Application - State and Country Fields Interdependence	"10.40.981.1813.a
+"	"Scenario: Place of birth state field is shown before country on second personal info page
+Given I am on the second personal info page of the application
+When I verify state and country fields
+System displays state field before country field
+"		<eol>
+								"10.40.981.1813.b
+"	"Scenario: country defaults to USA if state is chosen on second personal info page
+Given I am on the second personal info page of the application
+     And all other fields on this page are satisfied
+When I choose a state from the state dropdown
+System defaults country field to USA selection
+      And system allows user to navigate to the next page"		<eol>
+								"10.40.981.1813.c
+"	"Scenario: state selection is saved on second personal info page
+Given I am on the Military Service page of the application
+     And I have saved state with default USA country value on the second personal info page
+When I navigate back to the second personal info page
+System displays my state selection
+       And system displays default USA selection for country
+"		<eol>
+								"10.40.981.1813.d
+"	"Scenario: state is not required if foreign country chosen on second personal info page
+Given I am on the second personal info page of the application
+       And all other fields on the page are satisfied
+When I choose a foreign country from the country dropdown
+System defaults state to null value
+       And state selection is no longer required
+       And state dropdown is disabled
+       And user is allowed to save second personal info page"		<eol>
+								"10.40.981.1813.e
+"	"Scenario: foreign country selection is saved on second personal info page
+Given I am on the Military Service page of the application
+       And I have saved a foreign country selection with null state value
+When I navigate back to the second personal info page
+System displays my foreign country selection
+       And system displays disabled state field with null value
+"		<eol>
+								"10.40.981.1813.f
+"	"Scenario: most recent employer address state field is shown before country
+Given I am on the Employment History Section of the application
+When I verify state and country fields
+System displays state field before country field
+"		<eol>
+								"10.40.981.1813.g
+"	"Scenario: country defaults to USA if state is chosen on most recent employer Section
+Given I am on the most recent employer Section of the application
+     And all other fields on this page are satisfied
+When I choose a state from the state dropdown
+System defaults country field to USA selection
+      And system allows user to navigate to the next page
+"		<eol>
+								"10.40.981.1813.h
+"	"Scenario: state selection is saved on most recent employer Section
+Given I am on the Language skills/Transportation page of the application
+     And I have saved state with default USA country value on the most recent employer Section
+When I navigate back to the most recent employer Section
+System displays my state selection
+       And system displays default USA selection for country
+"		<eol>
+								"10.40.981.1813.i
+"	"Scenario: state is not required if foreign country chosen on most recent employer Section
+Given I am on the most recent employer Section of the application
+       And all other fields on the page are satisfied
+When I choose a foreign country from the country dropdown
+System defaults state to null value
+       And state selection is no longer required
+       And state dropdown is disabled
+       And user is allowed to save most recent employer Section
+"		<eol>
+								"10.40.981.1813.j
+"	"Scenario: foreign country selection is saved on most recent employer Section
+Given I am on the Language skills/Transportation page of the application
+       And I have saved a foreign country selection with null state value
+When I navigate back to the most recent employer Section
+System displays my foreign country selection
+       And system displays disabled state field with null value
+"		<eol>
+								"10.40.981.1813.k
+"	"Scenario: next most recent employer address state field is shown before country
+Given I am on the next most recent employer Section of the application
+When I verify state and country fields
+System displays state field before country field
+"		<eol>
+								"10.40.981.1813.l
+"	"Scenario: country defaults to USA if state is chosen on next most recent employer Section
+Given I am on the next most recent employer Section of the application
+     And all other fields on this page are satisfied
+When I choose a state from the state dropdown
+System defaults country field to USA selection
+      And system allows user to navigate to the next page
+"		<eol>
+								"10.40.981.1813.m
+"	"Scenario: state selection is saved on next most recent employer Section
+Given I am on the Language skills/Transportation page of the application
+     And I have saved state with default USA country value on next most recent employer Section
+When I navigate back to the next most recent employer Section
+System displays my state selection
+       And system displays default USA selection for country
+"		<eol>
+								"10.40.981.1813.n
+"	"Scenario: state is not required if foreign country chosen on next most recent employer Section
+Given I am on the next most recent employer Section of the application
+       And all other fields on the page are satisfied
+When I choose a foreign country from the country dropdown
+System defaults state to null value
+       And state selection is no longer required
+       And state dropdown is disabled
+       And user is allowed to save next most recent employer Section
+"		<eol>
+								"10.40.981.1813.o
+"	"Scenario: foreign country selection is saved on next most recent employer Section
+Given I am on the Language skills/Transportation page of the application
+       And I have saved a foreign country selection with null state value
+When I navigate back to the next most recent employer Section
+System displays my foreign country selection
+       And system displays disabled state field with null value
+"		<eol>
+CEN-1780	140975	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.983	Application - SSN shown when candidate enters number on application	10.40.983.1780.a	"Scenario: Number shown when entered on SSN field
+Given I am a candidate on the personal info page of the application
+When I enter a number on the SSN field
+Then the system will show the SSN"		<eol>
+								10.40.983.1780.b	"Scenario: Number shown when entered on confirm SSN field
+Given I am a candidate on the personal info page of the application
+When I enter a number on the confirm SSN field
+Then the system will show the SSN"		<eol>
+								10.40.983.1780.c	"Scenario: Number shown when saved on SSN field
+Given I am a candidate on the personal info page of the application
+AND I have entered a number on the SSN field
+AND I am on the second personal info page of the application
+When I press ""Previous"" button
+Then the system will show the SSN"		<eol>
+CEN-1718	138739	Story	jmoore	Closed	CEN Sprint 7	10.40.985	Application - Dropdowns for Country and State	"10.40.985.1718.a
+"	"Scenario: Home address State dropdown displays options
+Given I am a candidate on the personal info page of the application
+When I press the state dropdown for Home address
+Then the system will show all options for state"		<eol>
+								"10.40.985.1718.b
+"	"Scenario: Home Address State dropdown choice displays in field
+Given I am a candidate on the personal info page of the application
+When I press a state from the Home address state dropdown
+Then the system will show my selection in the field"		<eol>
+								"10.40.985.1718.c
+"	"Scenario: Home Address State dropdown choice is saved
+Given I am a candidate on the personal info page of the application
+AND I select a state from the Home address state dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the personal info page
+Then the system will show my previous selection in the field"		<eol>
+								"10.40.985.1718.d
+"	"Scenario: Home address Confirm State dropdown displays options
+Given I am a candidate on the personal info page of the application
+When I press the confirm state dropdown for Home address
+Then the system will show all options for state"		<eol>
+								"10.40.985.1718.e
+"	"Scenario: Home Address confirm State dropdown choice displays in field
+Given I am a candidate on the personal info page of the application
+When I press a state from the Home address confirm state dropdown
+Then the system will show my selection in the field"		<eol>
+								"10.40.985.1718.f
+"	"Scenario: Home Address Confirm State dropdown choice is saved
+Given I am a candidate on the personal info page of the application
+AND I select a state from the Home address confirm state dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the personal info page
+Then the system will show my previous selection in the field"		<eol>
+								10.40.985.1718.g	"Scenario: Mailing Address State dropdown displays options
+Given I am a candidate on the personal info page of the application
+When I press the state dropdown for Mailing address
+Then the system will show all options for state"		<eol>
+								10.40.985.1718.h	"Scenario: Mailing Address State dropdown choice displays in field
+Given I am a candidate on the personal info page of the application
+When I press a state from the Mailing Address state dropdown
+Then the system will show my selection in the field"		<eol>
+								"10.40.985.1718.i
+"	"Scenario: Mailing Address State dropdown choice is saved
+Given I am a candidate on the personal info page of the application
+AND I select a state from the Mailing Address state dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the personal info page
+Then the system will show my previous selection in the field"		<eol>
+								"10.40.985.1718.j
+"	"Scenario: Mailing Address confirm State dropdown displays options
+Given I am a candidate on the personal info page of the application
+When I press the confirm state dropdown for Mailing address
+Then the system will show all options for state"		<eol>
+								"10.40.985.1718.k
+"	"Scenario: Mailing Address confirm State dropdown choice displays in field
+Given I am a candidate on the personal info page of the application
+When I press a state from the Mailing Address confirm state dropdown
+Then the system will show my selection in the field"		<eol>
+								"10.40.985.1718.l
+"	"Scenario: Mailing Address confirm State dropdown choice is saved
+Given I am a candidate on the personal info page of the application
+AND I select a state from the Mailing Address confirm state dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the personal info page
+Then the system will show my previous selection in the field"		<eol>
+								"10.40.985.1718.m
+"	"Scenario: State of birth dropdown displays options
+Given I am a candidate on the personal info page 2 of the application
+When I press the state dropdown for Place of birth
+Then the system will show all options for state"		<eol>
+								"10.40.985.1718.n
+"	"Scenario: State of birth dropdown choice displays in field
+Given I am a candidate on the personal info page 2 of the application
+When I press a state from the State of birth dropdown
+Then the system will show my selection in the field"		<eol>
+								"10.40.985.1718.o
+"	"Scenario: State of birth dropdown choice is saved
+Given I am a candidate on the personal info page 2 of the application
+AND I select a state from the State of birth dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the personal info page 2
+Then the system will show my previous selection in the field"		<eol>
+								"10.40.985.1718.p
+"	"Scenario: Country of birth dropdown displays options
+Given I am a candidate on the personal info page 2 of the application
+When I press the Country dropdown for Place of birth
+Then the system will show all options for country"		<eol>
+								10.40.985.1718.q	"Scenario: Country dropdown choice displays in field
+Given I am a candidate on the personal info page 2 of the application
+When I press a state from the Country of birth dropdown
+Then the system will show my selection in the field"		<eol>
+								10.40.985.1718.r	"Scenario: Country of birth dropdown choice is saved
+Given I am a candidate on the personal info page 2 of the application
+AND I select a state from the Country of birth dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the personal info page 2
+Then the system will show my previous selection in the field"		<eol>
+								"10.40.985.1718.s
+"	"Scenario: most recent employer address state dropdown displays options
+Given I am a candidate on the most recent employer page of the application
+When I press the State dropdown for most recent employer address
+Then the system will show all options for state"		<eol>
+								"10.40.985.1718.t
+"	"Scenario: most recent employer address state dropdown choice displays in field
+Given I am a candidate on the most recent employer page of the application
+When I press a state from the most recent employer address state dropdown
+Then the system will show my selection in the field"		<eol>
+								"10.40.985.1718.u
+"	"Scenario: most recent employer address state dropdown choice is saved
+Given I am a candidate on the most recent employer page of the application
+AND I select a state from the most recent employer address state dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the most recent employer page
+Then the system will show my previous selection in the field"		<eol>
+								10.40.985.1718.v	"Scenario: next most recent employer address state dropdown displays options
+Given I am a candidate on the most recent employer page of the application
+When I press the State dropdown for next most recent employer address
+Then the system will show all options for state"		<eol>
+								10.40.985.1718.w	"Scenario: next most recent employer address state dropdown choice displays in field
+Given I am a candidate on the next most recent employer page of the application
+When I press a state from the next most recent employer address state dropdown
+Then the system will show my selection in the field"		<eol>
+								10.40.985.1718.x	"Scenario: next most recent employer address state dropdown choice is saved
+Given I am a candidate on the next most recent employer page of the application
+AND I select a state from the next most recent employer address state dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the next most recent employer page
+Then the system will show my previous selection in the field"		<eol>
+								10.40.985.1718.y	"Scenario: country of citizenship dropdown displays options
+Given I am a candidate on the second personal information page of the application
+When I press the country of citizenship dropdown
+Then the system will show all options for country"		<eol>
+								"10.40.985.1718.z
+"	"Scenario: country of citizenship dropdown choice displays in field
+Given I am a candidate on the second personal information page of the application
+When I press a country from the country of citizenship dropdown
+Then the system will show my selection in the field"		<eol>
+								10.40.985.1718.aa	"Scenario: country of citizenship dropdown choice is saved
+Given I am a candidate on the second personal information page of the application
+AND I select a country from the country of citizenship dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the second personal information page
+Then the system will show my previous selection in the field"		<eol>
+								10.40.985.1718.bb	"Scenario: relative census employee address state dropdown displays options
+Given I am a candidate on the relative working for census section of the application
+When I press relative census employee address state dropdown
+Then the system will show all options for state"		<eol>
+								"10.40.985.1718.cc
+"	"Scenario: relative census employee address state dropdown choice displays in field
+Given I am a candidate on the relative working for census section of the application
+When I press option for relative census employee address state dropdown
+Then the system will show my selection in the field"		<eol>
+								"10.40.985.1718.dd
+"	"Scenario: relative census employee address state dropdown choice is saved
+Given I am a candidate on the relative working for census section of the application
+AND I select a relative census employee address state from dropdown
+AND I have satisfied all required fields on the page
+AND I have continued to the next page of the application
+When I press previous to go back to the relative working for census section
+Then the system will show my previous selection in the field"		<eol>
+CEN-277	123080	Story	dsanchez	Awaiting QA	CEN Sprint 8	10.40.990	Application - Language Fluency Warning Message	"10.40.990.277
+"	"Scenario: System shows error when candidate/applicant selects language but does not specify fluency
+Given I am a candidate/applicant on the language fluency section of the application
+And I have specified a language from the dropdown
+And I have not specified Speak/Read/Write
+When I press Next button
+Then the system will show the error above"		<eol>
+CEN-1697	131918	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.990	"Application - Warning for not selecting ""Field Data Collection"""	"10.40.990.1697.a
+"	"Scenario: Alert when candidate has not selected Field Data Collection
+Given I am a candidate on the position interest selection page of the application
+And Field Data Collection field is null
+And I have selected another position
+When I press ""Next""
+Then the system will show alert above"		<eol>
+								10.40.990.1697.b	"Scenario: Closing alert to select Field Data Collection
+Given I am a candidate on the position interest selection page of the application
+And Field Data Collection alert is shown
+When I press ""CLOSE"" on this alert
+Then the system will close alert
+And I will remain on this page"		<eol>
+								"10.40.990.1697.c
+"	"Scenario: OK alert to continue to next page after job preference selection
+Given I am a candidate on the position interest selection page of the application
+And Field Data Collection alert is shown
+When I press ""OK"" on this alert
+Then the system will navigate me to the next page of the application"		<eol>
+								"10.40.990.1697.d
+"	"Scenario: continue with no alert when selecting Field Data Collection
+Given I am a candidate on the position interest selection page of the application
+And Field Data Collection is chosen
+And all other required fields are satisfied
+When I press ""Next""
+Then the system will navigate me to the next page of the application without alert"		<eol>
+CEN-1698	131920	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.990	Application - Available Hours alerts and functionality	"10.40.990.1698
+"	"Scenario: Alert when user selects more hours than they are available
+Given I am a candidate/applicant on the availability section of the application
+And I specify times I am willing to work
+And the value for the times I am willing to work exceeds the hours I specify that I am available
+When I press Next button
+Then the system will show the error above
+And I will remain on this page until the error is remedied."		<eol>
+CEN-279	123082	Story	msherburne	Backlog	CEN Sprint 8	10.40.991	Application - Required Fields	"10.40.991.279.a
+"	"Scenario: Unsatisfied Required fields on Page 1
+Given an Applicant on page 1 of the application
+And I have omitted any of the required fields
+SSN
+First Name
+Last Name
+Residence Address 1
+Zip Code
+City
+State
+County
+Nearest Cross Street A
+Nearest Cross Street B
+Email Address
+Phone Number
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made
+"		<eol>
+								"10.40.991.279.b
+"	"Scenario: satisfied Required fields on Page 1
+Given an Applicant on page 1 of the application
+And I have satisfied all of the required fields
+SSN
+First Name
+Last Name
+Residence Address 1
+Zip Code
+City
+State
+County
+Nearest Cross Street A
+Nearest Cross Street B
+Email Address
+Phone Number
+WHEN I press the Next button
+then the system will navigate me to page 2 of the application
+"		<eol>
+								"10.40.991.279.c
+"	"Scenario: Unsatisfied Required fields on Page 2
+Given an Applicant on page 2 of the application
+And I have omitted any of the required fields
+Sex
+Date of Birth
+Place of Birth City
+Place of Birth State
+Place of Birth Country
+Selective Service
+Provide SS Supporting Docs?
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made
+"		<eol>
+								"10.40.991.279.d
+"	"Scenario: satisfied Required fields on Page 2
+Given an Applicant on page 2 of the application
+And I have satisfied all of the required fields
+Sex
+Date of Birth
+Place of Birth City
+Place of Birth State
+Place of Birth Country
+Selective Service
+Provide SS Supporting Docs?
+WHEN I press the Next button
+then the system will navigate me to page 3 of the application
+"		<eol>
+								"10.40.991.279.e
+"	"Scenario: Unsatisfied Required fields on Page 3
+Given an Applicant on page 3 of the application
+And I have omitted any of the required fields
+Veteran's Preference
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made"		<eol>
+								10.40.991.279.f	"Scenario: satisfied Required fields on Page 3
+Given an Applicant on page 3 of the application
+And I have satisfied all of the required fields
+Veteran's Preference
+WHEN I press the Next button
+then the system will navigate me to page 4 of the application"		<eol>
+								"10.40.991.279.g
+"	"Scenario: Unsatisfied Required fields on Page 4
+Given an Applicant on page 4 of the application
+And I have omitted any of the required fields
+Interested in FLD Data Collect? OR Interested in FLD Outreach? OR Interested in Office?
+Supervisory Experience?
+Interested in Supv Position?
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made"		<eol>
+								10.40.991.279.h	"Scenario: satisfied Required fields on Page 4
+Given an Applicant on page 4 of the application
+And I have satisfied all of the required fields
+Interested in FLD Data Collect? OR Interested in FLD Outreach? OR Interested in Office?
+Supervisory Experience?
+Interested in Supv Position?
+WHEN I press the Next button
+then the system will navigate me to page 5 of the application"		<eol>
+								"10.40.991.279.i
+"	"Scenario: Unsatisfied Required fields on Page 5
+Given an Applicant on page 5 of the application
+And I have omitted any of the required fields
+Ever worked for Census?
+Most recent title
+Most recent date Start
+Most recent date End OR Currently Employed
+Currently Employed Federal?
+Agency
+Hire Date
+Currently Employed State, Local?
+Title
+Agency
+Currently Elected Official?
+Title
+Agency
+Receive Federal Retirement?
+Agency
+Provide details box
+Received Buyout within 5 yrs?
+Buyout Year
+Agency
+Relatives working for Census?
+First Name
+Last Name
+State
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made
+"		<eol>
+								"10.40.991.279.j
+"	"Scenario: satisfied Required fields on Page 5
+Given an Applicant on page 5 of the application
+And I have satisfied all of the required fields
+Ever worked for Census?
+Most recent title
+Most recent date Start
+Most recent date End OR Currently Employed
+Currently Employed Federal?
+Agency
+Hire Date
+Currently Employed State, Local?
+Title
+Agency
+Currently Elected Official?
+Title
+Agency
+Receive Federal Retirement?
+Agency
+Provide details box
+Received Buyout within 5 yrs?
+Buyout Year
+Agency
+Relatives working for Census?
+First Name
+Last Name
+State
+ 
+WHEN I press the Next button
+then the system will navigate me to page 6 of the application
+ 
+"		<eol>
+								10.40.991.279.k	"Scenario: Unsatisfied Required fields on Page 6
+Given an Applicant on page 6 of the application
+And I have omitted any of the required fields
+Boxes for work hours
+Total hours
+Have you ever worked?
+Contact recent employer?
+Employer name
+Start Date
+End Date OR Currently Employed
+Reason for leaving if End Date
+Job Duties
+Employer Address Country
+Employer Address 1
+Zip Code
+City
+State
+Employer Phone Number OR Phone Number Unknown
+Supervisor First Name
+Supervisor Last Name
+Title
+Average hours worked
+Salary
+Frequency of pay
+Did you supervise employees?
+ 
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made
+Scenario: Unsatisfied Required fields on Page 6
+Given an Applicant on page 6 of the application
+And I have omitted any of the required fields
+Boxes for work hours
+Total hours
+Have you ever worked?
+Contact recent employer?
+Employer name
+Start Date
+End Date OR Currently Employed
+Reason for leaving if End Date
+Job Duties
+Employer Address Country
+Employer Address 1
+Zip Code
+City
+State
+Employer Phone Number OR Phone Number Unknown
+Supervisor First Name
+Supervisor Last Name
+Title
+Average hours worked
+Salary
+Frequency of pay
+Did you supervise employees?
+ 
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made
+"		<eol>
+								10.40.991.279.l	"Scenario: satisfied Required fields on Page 6
+Given an Applicant on page 6 of the application
+And I have satisfied all of the required fields
+ 
+ 
+Boxes for work hours
+Total hours
+Have you ever worked?
+Contact recent employer?
+Employer name
+Start Date
+End Date OR Currently Employed
+Reason for leaving if End Date
+Job Duties
+Employer Address Country
+Employer Address 1
+Zip Code
+City
+State
+Employer Phone Number OR Phone Number Unknown
+Supervisor First Name
+Supervisor Last Name
+Title
+Average hours worked
+Salary
+Frequency of pay
+Did you supervise employees?
+WHEN I press the Next button
+then the system will navigate me to page 7 of the application
+ 
+"		<eol>
+								"10.40.991.279.m
+"	"Scenario: Unsatisfied Required fields on Page 7
+Given an Applicant on page 7 of the application
+And I have omitted any of the required fields
+ 
+ 
+Are you fluent in foreign language?
+Language
+Speak/Read/Write
+Type of Vehicle
+Type of Vehicle text box
+Valid Drivers License
+WHEN I press the Next button
+then I will see error messages on the screen informing me of the missing fields
+and I will remain on the incomplete page until corrections are made
+"		<eol>
+								"10.40.991.279.n
+"	"Scenario: satisfied Required fields on Page 7
+Given an Applicant on page 7 of the application
+And I have satisfied all of the required fields
+  
+Are you fluent in foreign language?
+Language
+Speak/Read/Write
+Type of Vehicle
+Type of Vehicle text box
+Valid Drivers License
+  
+WHEN I press the Next button
+then the system will navigate me to page 8 of the application
+ 
+"		<eol>
+CEN-1743	139807	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.991	Application - Employer Phone number or phone number unknown required	10.40.991.1742.a	"Scenario: Candidate may select unknown for previous employer phone number
+Given I am on the previous employer section of the application
+And I have selected that I have worked before
+When I press the ""Unknown"" checkbox for Previous employer phone number
+Then the system will show my selection"		<eol>
+								10.40.991.1742.b	"Scenario: Solution saves candidates ""Unknown"" previous employer phone number selection
+Given I am on the previous employer section of the application
+And I have selected that I have worked before
+And I have pressed the ""Unknown"" checkbox for Previous employer phone number
+And I have satisfied all other required fields on the page
+And I have navigated to the next page on the application
+When I return to the previous employer section of the application
+Then the system will show that it has saved my selection"		<eol>
+								"10.40.991.1742.c
+"	"Scenario: Previous Employer phone number is required if ""Unknown"" is not selected
+Given I am on the previous employer section of the application
+And I have selected that I have worked before
+And the ""Unknown"" checkbox for Previous employer phone number is left null
+And the previous employer phone number is left null
+When I press ""Next"" button
+Then the system will show that phone number is required
+And the Next button will keep me on this page until required fields are satisfied."		<eol>
+CEN-269	123072	Story	dsanchez	Awaiting QA	CEN Sprint 8	10.40.994	Application - Spellcheck Candidate input	"10.40.994.269.a
+"	"Scenario: Solution identifies misspelled words on application
+Given I am on the application
+And I enter a misspelled word into a text field
+Then the solution will identify the misspelled word"		<eol>
+								"10.40.994.269.b
+"	"Scenario: Solution ignores correctly spelled words on application
+Given I am on the application
+And I enter a correclty spelled word into a text field
+Then the solution will allow the correctly spelled word without alert"		<eol>
+CEN-246	123048	Story	jmoore	Closed	CEN Sprint 8	10.40.995	Application - electronic disclosure statement	"10.40.995.246.a
+"	"Scenario: Candidate verifies information and items on this page
+Given I am a candidate on the Electronic Disclosure page of the application
+When I verify the information and items on this page
+Then I will see the information and items shown above"		<eol>
+								"10.40.995.246.b
+"	"Scenario: Candidate accesses link to EEO Information
+Given I am a candidate on the Electronic Disclosure page of the application
+When I press the link entitled ""Click here to Learn more""
+Then the following page will open in a separate tab:
+https://www.census.gov/eeo/policy_statements/"		<eol>
+								"10.40.995.246.c
+"	"Scenario: Candidate presses acknowledgement radio button
+Given I am a candidate on the Electronic Disclosure page of the application
+When I press radio button for ""I acknowledge that I have read and understand the statements above""
+Then the system will disable the ""Opt Out of Electronic Application"" button"		<eol>
+								"10.40.995.246.d
+"	"Scenario: Candidate presses opt out radio button
+Given I am a candidate on the Electronic Disclosure page of the application
+When I press radio button for ""I choose to opt out of the electronic Census Application process and will use the manual process instead""
+Then the system will disable the ""Accept and E-Sign"" button"		<eol>
+								"10.40.995.246.e
+"	"Scenario: Candidate presses Opt Out of Electronic Application
+Given I am a candidate on the Electronic Disclosure page of the application
+And I have pressed the radio button for ""I choose to opt out of the electronic Census Application process and will use the manual process instead""
+When I press the ""Opt Out of Electronic Application"" button
+Then the system will navigate me back to the first application page"		<eol>
+								"10.40.995.246.f
+"	"Scenario: Candidate Accepts and E-signs
+Given I am a candidate on the Electronic Disclosure page of the application
+And I have pressed the radio button for ""I acknowledge that I have read and understand the statements above""
+When I press the ""Accept and E-Sign"" button
+Then the system will navigate me to the Instructions page"		<eol>
+								"10.40.995.246.g
+"	"Scenario: Candidate changes from opting out to e-signing electronic disclosure
+Given I am a candidate on the applicant Portal
+And I have previously opted out of the electronic disclosure
+And I have returned to the electronic disclosure page
+When I select radio button for ""I acknowledge that I have read and understand the statements above""
+Then the system will uncheck the opt out radio button
+AND the system will disable the opt out button
+And the system will enable the e-sign button"		<eol>
+CEN-237	123039	Story	mpatel	Closed	CEN Sprint 7	10.40.997	Application - Double entered fields	"10.40.997.a
+"	"Scenario: SSN confirm field must match SSN field
+Given I am on the application
+AND confirm SSN entry does not match SSN field entry
+Then the system will show an error"		<eol>
+								"10.40.997.b
+"	"Scenario: Confirm SSN and SSN matches are validated
+Given I am on the application
+AND confirm SSN entry does match SSN field entry
+Then the system will not show error"		<eol>
+								"10.40.997.c
+"	"Scenario: Residence Address 1 confirm field must match Residence Address 1 field
+Given I am on the application
+AND confirm Residence Address 1 entry does not match Residence Address 1 field entry
+Then the system will show an error"		<eol>
+								"10.40.997.d
+"	"Scenario: Confirm Residence Address 1 and Residence Address 1 matches are validated
+Given I am on the application
+AND confirm Residence Address 1 entry does match Residence Address 1 field entry
+Then the system will not show error"		<eol>
+								"10.40.997.e
+"	"Scenario: Residence Address 2 confirm field must match Residence Address 2 field
+Given I am on the application
+AND confirm Residence Address 2 entry does not match Residence Address 2 field entry
+Then the system will show an error"		<eol>
+								10.40.997.f	"Scenario: Confirm Residence Address 2 and Residence Address 2 matches are validated
+Given I am on the application
+AND confirm Residence Address 2 entry does match Residence Address 2 field entry
+Then the system will not show error"		<eol>
+								10.40.997.g	"Scenario: Residence Address 3 confirm field must match Residence Address 3 field
+Given I am on the application
+AND confirm Residence Address 3 entry does not match Residence Address 3 field entry
+Then the system will show an error"		<eol>
+								"10.40.997.h
+"	"Scenario: Confirm Residence Address 3 and Residence Address 3 matches are validated
+Given I am on the application
+AND confirm Residence Address 3 entry does match Residence Address 3 field entry
+Then the system will not show error"		<eol>
+								"10.40.997.i
+"	"Scenario: Zip Code confirm field must match Zip Code field
+Given I am on the application
+AND confirm Zip Code entry does not match Zip Code field entry
+Then the system will show an error"		<eol>
+								"10.40.997.j
+"	"Scenario: Confirm Zip Code and Zip Code matches are validated
+Given I am on the application
+AND confirm Zip Code entry does match Zip Code field entry
+Then the system will not show error"		<eol>
+								"10.40.997.k
+"	"Scenario: County confirm field must match County field
+Given I am on the application
+AND confirm County entry does not match County field entry
+Then the system will show an error"		<eol>
+								"10.40.997.l
+"	"Scenario: Confirm County and County matches are validated
+Given I am on the application
+AND confirm County entry does match County field entry
+Then the system will not show error"		<eol>
+								"10.40.997.m
+"	"Scenario: Mailing Address 1 confirm field must match Mailing Address 1 field
+Given I am on the application
+AND confirm Mailing Address 1 entry does not match Mailing Address 1 field entry
+Then the system will show an error"		<eol>
+								"10.40.997.n
+"	"Scenario: Confirm Mailing Address 1 and Mailing Address 1 matches are validated
+Given I am on the application
+AND confirm Mailing Address 1 entry does match Mailing Address 1 field entry
+Then the system will not show error"		<eol>
+								"10.40.997.o
+"	"Scenario: Mailing Address 2 confirm field must match Mailing Address 2 field
+Given I am on the application
+AND confirm Mailing Address 2 entry does not match Mailing Address 2 field entry
+Then the system will show an error"		<eol>
+								10.40.997.p	"Scenario: Confirm Mailing Address 2 and Mailing Address 2 matches are validated
+Given I am on the application
+AND confirm Mailing Address 2 entry does match Mailing Address 2 field entry
+Then the system will not show error"		<eol>
+								"10.40.997.q
+"	"Scenario: Mailing Address 3 confirm field must match Mailing Address 3 field
+Given I am on the application
+AND confirm Mailing Address 3 entry does not match Mailing Address 3 field entry
+Then the system will show an error"		<eol>
+								"10.40.997.r
+"	"Scenario: Confirm Mailing Address 3 and Mailing Address 3 matches are validated
+Given I am on the application
+AND confirm Mailing Address 3 entry does match Mailing Address 3 field entry
+Then the system will not show error"		<eol>
+								"10.40.997.s
+"	"Scenario: Mailing Zip Code confirm field must match Mailing Zip Code field
+Given I am on the application
+AND confirm Mailing Zip Code entry does not match Mailing Zip Code field entry
+Then the system will show an error"		<eol>
+								"10.40.997.t
+"	"Scenario: Confirm Mailing Zip Code and Mailing Zip Code matches are validated
+Given I am on the application
+AND confirm Mailing Zip Code entry does match Mailing Zip Code field entry
+Then the system will not show error"		<eol>
+								"10.40.997.u
+"	"Scenario: Date of Birth confirm field must match Date of Birth field
+Given I am on the application
+AND confirm Date of Birth entry does not match Date of Birth field entry
+Then the system will show an error"		<eol>
+								"10.40.997.v
+"	"Scenario: Confirm Date of Birth and Date of Birth matches are validated
+Given I am on the application
+AND confirm Date of Birth entry does match Date of Birth field entry
+Then the system will not show error"		<eol>
+								"10.40.997.w
+"	"Scenario: Alien Registration Number confirm field must match Alien Registration Number field
+Given I am on the application
+AND confirm Alien Registration Number entry does not match Alien Registration Number field entry
+Then the system will show an error"		<eol>
+								"10.40.997.x
+"	"Scenario: Confirm Alien Registration Number and Alien Registration Number matches are validated
+Given I am on the application
+AND confirm Alien Registration Number entry does match Alien Registration Number field entry
+Then the system will not show error"		<eol>
+CEN-264	123067	Story	msherburne	Closed	CEN Sprint 7	10.40.998	Application - Hide/Show fields based on candidate's previous selections	"10.40.998.1106.a
+"	"Scenario: Selective Service section shown
+Given I am on the application
+And I selected ""Male"" for sex
+And I entered birth-date after 12/31/59
+Then the solution will show Selective Service Verification related to 11a"		<eol>
+								"10.40.998.1106.b
+"	"Scenario: Selective Service Supporting Documentation for Unregistered males
+Given I am on the application
+And I selected ""Not Registered"" for Selective Service
+Then the solution will show the Selective Service Supporting Documentation for Unregistered males Section related to 11b"		<eol>
+								"10.40.998.1106.c
+"	"Scenario: Selective Service Unregistered males Explanation Text Box
+Given I am on the application
+And I selected ""No"" to having supporting documentation for not being registered with selective service
+Then the solution will show the Selective Service explanation Text Box for not having documentation"		<eol>
+								"10.40.998.1106.d
+"	"Scenario: Country of Citizenship Text field shown
+Given I am on the application
+And I selected ""No"" to being a Citizen/National (10a)
+Then the solution will show the Country of Citizenship Text field"		<eol>
+								"10.40.998.1106.e
+"	"Scenario: Lawful Permanent Resident Section shown
+Given I am on the application
+And I selected ""No"" to being a Citizen/National (10a)
+Then the solution will show yes and no options for Lawful Permanent Resident (10b)1"		<eol>
+								"10.40.998.1106.f
+"	"Scenario: Alien Registration number Field shown
+Given I am on the application
+And I selected ""Yes"" to being a Lawful Permanent Resident (10b)
+Then the solution will show the Alien Registration number Field"		<eol>
+								"10.40.998.1106.g
+"	"Scenario: Veteran Service detail Fields shown
+Given I am on the application
+And I selected ""Yes"" to claim veterans' preference (12a)
+Then the solution will show period of Service Start field
+AND period of Service End field
+AND Branch of Service field
+AND Vet. preference category selections (12b)
+AND DD-214 file upload option"		<eol>
+								"10.40.998.1106.h
+"	"Scenario: Veteran Service SF-15 File Upload shown
+Given I am on the application
+And I select veteran 10-point preference option
+Then the solution will show the SF-15 File Upload option"		<eol>
+								"10.40.998.1106.i
+"	"Scenario: Veteran Service SF-15 File Upload shown
+Given I am on the application
+And I select veteran 10-point Derived preference option
+Then the solution will show the SF-15 File Upload option"		<eol>
+								"10.40.998.1106.j
+"	"Scenario: Previous Census work detail fields shown
+Given I am on the application
+And I select ""Yes"" for worked for Census (15)
+Then the solution will show the Recent Title Field
+And the Most Recent Start Date Field
+And the Most Recent End Date Field
+And the Current Employed Checkbox"		<eol>
+								"10.40.998.1106.k
+"	"Scenario: Federal Government Agency work detail fields shown
+Given I am on the application
+And I select ""Yes"" to currently employed Fed Gov Agency (16)
+Then the solution will show the Agency Selection field
+And the Hire Date Fields
+And the Info button for Fed Gov Agency (Story 598)"		<eol>
+								"10.40.998.1106.l
+"	"Scenario: State/Local employment detail fields shown
+Given I am on the application
+And I select ""yes"" to currently employed by state/local gov (17)
+Then the solution will show the Title field
+And the Agency Field"		<eol>
+								"10.40.998.1106.m
+"	"Scenario: Current Elected Official detail fields shown
+Given I am on the application
+And I select ""yes"" to currently Elected Official (18)
+Then the solution will show the Title field
+And the Agency Field"		<eol>
+								"10.40.998.1106.n
+"	"Scenario: Current law enforcement employee detail fields shown
+Given I am on the application
+And I select ""yes"" to Current law enforcement employee (19)
+Then the solution will show the Title field
+And the Agency Field"		<eol>
+								"10.40.998.1106.o
+"	"Scenario: Federal Retirement Collection detail fields shown
+Given I am on the application
+And I select ""yes"" to Federal Retirement Collection (20)
+Then the solution will show the Agency field
+And the Details Field"		<eol>
+								"10.40.998.1106.p
+"	"Scenario: Buyout detail fields shown
+Given I am on the application
+And I select ""have recieved"" a buyout (21)
+Then the solution will show the Buyout year
+And the Agency field
+And the DT-237 upload option"		<eol>
+								"10.40.998.1106.q
+"	"Scenario: Census Relative detail fields shown
+Given I am on the application
+And I select ""yes"" to Relative at Census (22)
+Then the solution will show the First Name field
+And the Last Name Field
+And the City Field
+And the State Field
+And the Title Field"		<eol>
+								"10.40.998.1106.r
+"	"Scenario: Work History detail fields shown
+Given I am on the application
+And I select ""yes"" to Having ever worked (24)
+Then the solution will show past work experience section (25-27k)"		<eol>
+								"10.40.998.1106.s
+"	"Scenario: Reason for leaving field shown
+Given I am on the application
+And I specify ""end date"" for a previous employer (26e)
+Then the solution will show Reason for leaving field"		<eol>
+								"10.40.998.1106.t
+"	"Scenario: Additional Work History Detail fields shown
+Given I am on the application
+And I select ""Yes"" for add additional previous employer (after 27k)
+Then the solution will show additional past work experience section (like 25-27k)"		<eol>
+								"10.40.998.1106.u
+"	"Scenario: Fluency in language Detail fields shown
+Given I am on the application
+And I select ""Yes"" for fluency in language (28)
+Then the solution will show Language selection section"		<eol>
+CEN-1592	128741	Story	jmoore	Closed	CEN Sprint 7	10.40.998	Application - Govt. Agency Dropdown for Employment	"10.40.988.1592.a
+"	"Scenario: Candidate/applicant verifies dropdown options for Federal Gov Agency
+Given I am on the Federal Employment section of the application
+And I have selected ""Yes"" to being employed by a fed Gov agency
+When I verify the dropdown for Agency
+Then the system will display the list of fed Gov Agencies"		<eol>
+								"10.40.988.1592.b
+"	"Scenario: Candidate/applicant can select an option from the Gov Agency dropdown
+Given I am on the Federal Employment section of the application
+And I have selected ""Yes"" to being employed by a fed Gov agency
+When I press an option from the dropdown
+Then the system will display the selection in the field"		<eol>
+								"10.40.988.1592.c
+"	"Scenario: Candidate/applicant can save selection for fed Gov agency
+Given I am on the Application
+And I have selected ""Yes"" to being employed by a fed Gov agency
+And I have made a selection from the Fed Gov Agency dropdown
+And I have saved my input on the Federal Employment page of the application
+When I navigate back to this page
+Then the system will display the selection I made in the fed Gov agency field"		<eol>
+CEN-239	123041	Story	msherburne	Backlog	CEN Sprint 8	10.40.999	Application - Candidate sees info (i) available where necessary	"10.40.999.239.a
+"	"Scenario: Candidate presses First Name Info button
+Given I am on the application
+And I press the Info button for First Name
+Then I will see the info button pop up with text, ""If you do not have a legal first name you need to enter 'First Name Unused' in the first name box."""		<eol>
+								"10.40.999.239.b
+"	"Scenario: Candidate presses DD-214 upload Info button
+Given I am on the application
+And I press the Info button for DD-214 upload
+Then I will see the info button pop up with upload directions"		<eol>
+								"10.40.999.239.c
+"	"Scenario: Candidate presses SF-15 upload Info button
+Given I am on the application
+And I press the Info button for SF-15 upload
+Then I will see the info button pop up with upload directions"		<eol>
+								"10.40.999.239.d
+"	"Scenario: Candidate presses DT-237 upload Info button
+Given I am on the application
+And I press the Info button for DT-237 upload
+Then I will see the info button pop up with upload directions"		<eol>
+								"10.40.999.239.e
+"	"Scenario: Candidate presses SF-50 upload Info button
+Given I am on the application
+And I press the Info button for SF-50 upload
+Then I will see the info button pop up with upload directions"		<eol>
+								10.40.999.239.f	"Scenario: Candidate presses Fed Gov Agency Info button
+Given I am on the application
+And I press the Info button for Fed Gov Agency
+Then I will see the info button pop up with text, ""Currently dual enrollment between Federal agencies is not allowed, however, for future 2020 Census operations dual Federal employment may become available. If your agency is not listed, please indicate the Department it is associated with. If you do not know the Department, click the link below to look it up. https://www.usa.gov/federal-agencies/a"""		<eol>
+								"10.40.999.239.g
+"	"Scenario: Candidate presses Buyout Info button
+Given I am on the application
+And I press the Info button for Buyout
+Then I will see the info button pop up with text, ""If your agency is not listed, please indicate the Department it is associated with. If you do not know the Department, click the link below to look it up. https://www.usa.gov/federal-agencies/a"""		<eol>
+								"10.40.999.239.h
+"	"Scenario: Candidate presses Have you ever worked Info button
+Given I am on the application
+And I press the Info button for Have you ever worked
+Then I will see the info button pop up with text, ""Refers to paid and unpaid experience, including volunteer work done through National Service programs (e.g. Pease Corps, AmeriCorps) and other organizations (e.g. professional, philanthropic, religious, spiritual, community, student, social). Volunteer work helps build critical competencies, knowledge, and skills which can provide valuable training and experience that translates directly to paid employment."""		<eol>
+								"10.40.999.239.i
+"	"Scenario: Candidate presses Employer phone number Info button
+Given I am on the application
+And I press the Info button for Employer phone number
+Then I will see the info button pop up with text, ""Select the 'Unknown' checkbox if the number no longer exists or you cannot find it."""		<eol>
+								"10.40.999.239.j
+"	"Scenario: Candidate presses Hours worked Info button
+Given I am on the application
+And I press the Info button for Hours worked
+Then I will see the info button pop up with text, ""This is the average number of hours worked or working per week."""		<eol>
+								"10.40.999.239.k
+"	"Scenario: Candidate presses Check to allow Texting checkbox
+Given I am on the application
+And I press the checkbox for Check to allow Texting
+Then I will see the pop up with text, ""Standard data fees and text messaging rates may apply based on your plan with your mobile phone carrier. Please uncheck 'Check to Allow Texting' if you do not agree to these terms. (""ok"" button)"""		<eol>
+CEN-1699	131923	Story	jmoore	Awaiting PO Action	CEN Sprint 8	10.40.999	Application - Alien Registration number validation and Info button	"10.40.999.598.a
+"	"Scenario: Candidate presses Specify Alien Registration Info button
+Given I am on the application
+And I press the Info button for Specify Alien Registration
+Then I will see the info button pop up with text, ""Enter the Alien Registration Number (A-number) without the ""A"". It must be 9 or less digits. If your number is less than 9 digits, add zeros to the left of the number until it is 9 digits in length."""		<eol>
+CEN-275	123078	Story	mpatel	Closed	CEN Sprint 7	10.40.992	Application - Reminders to complete sections on E-sign page	"10.40.992.1117.a
+"	"Scenario: Solution displays link to address Buyout attachment
+Given I am on the application
+And I have indicated receiving a buyout
+And I have not attached a DT-237 form
+And I have navigated to the E-sign page
+Then the solution will display a message and link to go back and upload this form"		<eol>
+								"10.40.992.1117.b
+"	"Scenario: Solution displays link to address Veterans' Preference attachment
+Given I am on the application
+And I have indicated Veterans' Preference
+And I have not attached a DD-214 form
+And I have navigated to the E-sign page
+Then the solution will display a message and link to go back and upload this form"		<eol>
+								"10.40.992.1117.c
+"	"Scenario: Solution displays link to address 10-point Veterans' Preference attachment
+Given I am on the application
+And I have indicated 10-point Veterans' Preference
+And I have not attached a SF-15 form
+And I have navigated to the E-sign page
+Then the solution will display a message
+AND a link that takes me back to upload this form"		<eol>
+								"10.40.992.1117.d
+"	"Scenario: Solution displays link to address 10-point Derived Veterans' Preference attachment
+Given I am on the application
+And I have indicated 10-point Derived Veterans' Preference
+And I have not attached a SF-15 form
+And I have navigated to the E-sign page
+Then the solution will display a message
+AND a link that takes me back to upload this form"		<eol>
+								"10.40.992.1117.e
+"	"Scenario: Solution displays option to proceed with e-sign despite unresolved items
+Given I am on the e-sign page of the application
+And the solution displays a list of items to go back and address on e-sign page
+Then the solution will display an option to proceed with e-sign without uploading these items"		<eol>
+								"10.40.992.1117.f
+"	"Scenario: Candidate able to e-sign despite list of unuploaded forms
+Given I am on the e-sign page of the application
+And the solution displays a list of items to go back and address on e-sign page
+And I want to e-sign without providing these forms
+Then I am able to e-sign"		<eol>
+CEN-299	123103	Story		Backlog		10.50.10	Application - Submission/Validation of application	10.50.10.640.a	"Scenario: Veteran's Preference documentation unattached SF-15 (10-point) warning on submission
+Given I am on the Application e-sign page
+And I selected 10 point preference on 12b
+And I want to skip the documentation upload
+And I want to e-sign
+Then I must see warning"		<eol>
+								10.40.75.599.b	"Scenario: Veteran's Preference documentation unattached SF-15 (10-point derived) warning on submission
+Given I am on the Application e-sign page
+And I select 10 point derived preference on 12b
+And I want to skip the documentation upload
+And I want to e-sign
+Then I must see warning"		<eol>
+								10.40.75.599.c	"Scenario: Veteran's Preference documentation unattached DD-214 (5 point derived) warning on submission
+Given I am on the Application e-sign page
+And I select 5 point derived preference on 12b
+And I want to skip the documentation upload
+And I want to e-sign
+Then I must see warning"		<eol>
+								10.40.75.599.d	"Scenario: Veteran's Preference documentation unattached DD-214 (Sole survivorship) warning on submission
+Given I am on the Application e-sign page
+And I select sole survivorship on 12b
+And I want to skip the documentation upload
+And I want to e-sign
+Then I must see warning"		<eol>
+CEN-303	123107	Story	msherburne	In Dev	CEN Sprint 8	10.50.20	Application -Unique applicant validation (SSN)	"10.50.20.303.a
+"	"Scenario: Error on entering SSN of previous applicant
+Given I am on the application
+And my SSN matches that of a previous applicant
+When I press ""next"" to proceed to the next page
+Then the system will show the error above
+And I will not be able to proceed to the next page"		<eol>
+CEN-962	123766	Story		Closed	CEN Sprint 7	110.50.80	Applicant Portal - Solution logs user out after 15 min/Dependent on CSOD	110.50.80.a	"Given I am on my application
+And I am inactive for more than 15 mins
+ Then I must be logged out
+And I lost my unsaved entries
+"		<eol>
+CEN-1677	131613	Story	rbeery	Backlog	CEN Sprint 8	110.50.999	Register - Handle 15 minute inactivity â€“ need to coordinate between CSOD and R&A 	"110.50.999.965.a
+"	"Scenario: Applicant is shown warning before 15 min auto logout
+Given I am on the applicant portal
+When I am on a page that has been inactive for 13 mins
+Then the system will show an alert that I am about to be logged out automatically"		<eol>
+								110.50.999.965.b	"Scenario: Applicant chooses to override automatic logout
+Given I am on the applicant portal
+And I am on a page that has been inactive for 13 mins
+And the system has shown 2 min warning
+When I press ""Continue my session"" on the alert
+Then the system will continue my session
+And I will not see another alert for 13 mins of inactivity"		<eol>
+								"110.50.999.965.c
+"	"Scenario: Applicant is logged out after 15 mins of inactivity
+Given I am on the applicant portal
+And I have been inactive on my current page for 15 mins
+And the system has shown 2 min warning
+And I don't override it
+Then the system will end my session"		<eol>
+CEN-1065	123869	Story		Closed		130.60 System/Capabilities	"Candidate enters name, address and contact info (Section A/Page 1)"	10.20.80.451.a	"(Transfer to zip lookup story when completed)
+Given I am on the Applicant Portal
+And I want to complete Applicant Profile Data 
+Then City and State populate"		<eol>
+								10.20.80.451.b	"Given I am on the Applicant Portal
+And I fill all the required Applicant Profile Data 
+Then I do not see any errors for missing required fields
+And I click Next
+And I can proceed forward to Citizenship page"		<eol>
+								10.20.80.451.c	"Given I am on the Applicant Portal
+And I do not fill all the required Applicant Profile Data
+And I click Next
+Then I see errors for missing required fields
+And I cannot proceed forward to Citizenship page"		<eol>
+								10.20.80.451.d	"Given I am on the Applicant Portal
+And I fill all the required Applicant Profile Data 
+And I click ""Save and Exit""
+Then I do not see any errors for missing required fields
+And I am taken to Applicant Portal"		<eol>
+								10.20.80.451.e	"Given I am on the Applicant Portal
+And I do not fill all the required Applicant Profile Data 
+Then I see errors for missing required fields
+And I cannot go to the Applicant Portal"		<eol>
+								10.20.80.451.f	"Given I am on the Applicant Portal
+And I fill all the required Applicant Profile Data 
+And I click ""Previous""
+Then I do not see any errors for missing required fields
+And I am taken to Applicant Portal"		<eol>
+								10.20.80.451.g	"Given I am on the Applicant Portal
+And I do not fill all the required Applicant Profile Data 
+Then I see errors for missing required fields
+And I cannot go to the Applicant Portal"		<eol>
+CEN-310	123114	Story	olebedev	In QA	CEN Sprint 8	20.10.10	Assessments - Employee Portal allows user to add pre-employment practice assessment and assessment questions	20.10.10a	"Scenario: Add assessment
+Given I have added an assessment
+And there is at least one section with one question which has at least one answer
+Then the practice assessment will be available for applicants to take."		<eol>
+CEN-314	123118	Story	olebedev	In QA	CEN Sprint 8	20.10.30	Assessments - Employee Portal allows user to modify pre-employment practice assessment and assessment questions	20.10.30a	"Scenario: Modify answer to question on assessment
+Given I have toggled the answers to show
+And I edit an answer and save
+Then the answer will be updated and available on the assessment."		<eol>
+								20.10.30b	"Scenario: Modify question on assessment
+Given I am viewing the questions in a section of the assessment
+And I modify a question and save
+Then the question will be updated and available on the assessment."		<eol>
+								20.10.30c	"Scenario: Modify question group context on assessment
+Given I am viewing the questions in a section of the assessment
+And I modify the question group context and save
+Then the question group context will be updated and available on the assessment."		<eol>
+								20.10.30d	"Scenario: Modify section on assessment
+Given I am viewing the list of sections on the Edit Assessment page
+And I modify a section and save
+Then the section will be updated and available on the assessment."		<eol>
+CEN-337	123141	Story		Closed	CEN Sprint 6	20.20.10	Assessment - See Assessment Instructions and Next Steps at the top of the page during assessment(s)		"Given i am an applicant 
+when i am on an assessment instructions page
+then i will be able to view assessment instrutions for that assessment/section 
+and i will able to proceed to that assessment by clicking the next button"		<eol>
+CEN-327	123131	Story	adamsenn	Closed		20.20.20	Applicant Portal provides access to Practice Employment Assessments	20.20.20.50	Scenario: Applicant Portal Practice Assessment Access Given I want to start Practice assessement And I have logged into the Applicant Portal Then I must see Practice Assessment Assumptions 2 links 	yes	<eol>
+CEN-340	123144	Story	adamsenn	Closed		20.20.40	Allow applicant to take an unlimited amount of unscored practice assessments	20.20.40.320.a	Scenario: Practice Assessment optional for all applicants Given I am in the Applicant Portal And I have submitted an application Then I will see a link to take practice assessment 	yes	<eol>
+								20.20.40.320.b	 Scenario: Practice Assessment General Instructions Given I am in the Practice Assessment Then I will see the practice assessment general instructions	yes	<eol>
+								20.20.40.320.c	Scenario: Practice Assessment Scenario Section Instructions Given I am on the practice assessment General Instructions And I proceed to the next page Then I will see the section instructions	yes	<eol>
+								20.20.40.320.d	 Scenario: practice assessment Scenarios section is 2 minutes Given I am on the practice assessment Scenarios section instructions And I proceed to the next page Then the timer will start with 2 minutes	yes	<eol>
+								20.20.40.320.e	Scenario: Practice Assessment Experience Section Instructions Given I am on the practice assessment Scenario section And I proceed to the next page Then I will see the Experience section instructions	yes	<eol>
+								20.20.40.320.f 	Scenario: practice assessment Experience section is 2 minutes Given I am on the practice assessment experience section instructions And I proceed to the next page Then the timer will start with 2 minutes	yes	<eol>
+								20.20.40.320.g	Scenario: Practice Assessment Reading Section Instructions Given I am on the practice assessment experience section And I proceed to the next page Then I will see the Reading section instructions 	yes	<eol>
+								20.20.40.320.h 	Scenario: practice assessment Reading section is 2 minutes Given I am on the practice assessment reading section instructions And I proceed to the next page Then the timer will start with 2 minutes	yes	<eol>
+								20.20.40.320.i	Scenario: Practice assessment sections has 2 questions Given I am on a Reading Assessment section Then I will see 2 questions 	yes	<eol>
+								20.20.40.320.j	Scenario: Practice Assessment section has 4-5 answers per question Given I am on a Reading Assessment section Then I will see 4-5 answers per question 	yes	<eol>
+								20.20.40.320.k	Scenario: Practice Assessment has 3 sections Given I am on the Practice Assessment Reading Section And I completed the Practice Assessment Reading Section Then I will see the practice assessment completion page <Originally e-sign page but there will be no e-sign page for practice assessments per amy's email on 3/23/2017> 	yes	<eol>
+								20.20.40.320.L 	Scenario: Practice Assessment may be taken again Given I completed a practice assessment Then I may take the practice assessment again 	yes	<eol>
+CEN-345	123149	Story	adamsenn	Closed		20.30.20	Applicant Portal provides access to assessments	20.30.20.52	Scenario: Applicant Portal Assessment Access Given I want to start Assessement And I have logged into the Applicant Portal Then I must see the Complete Assessments button that takes me to Assessment Instructions 	yes	<eol>
+CEN-353	123157	Story	mpatel	Closed	CEN Sprint 6	20.30.30	Assessment - Allow Applicants to initiate and complete assessments	20.30.30.322.a	"
+Scenario: Assessment will show as not started
+Given I have not started an assessment
+Then this assessment will display as not started
+And I can click the link to access the assessment"		<eol>
+								20.30.30.322.b	"
+Scenario: Assessment will show as in process
+Given I have started an assessment
+And I have not yet completed it
+Then this assessment will display as in process
+And I can click the link to access the assessment
+
+"		<eol>
+								20.30.30.322.c	"
+Scenario: Assessment will show as completed
+Given I have an assessment
+Then this assessment will display as completed
+And I will no longer be able to access this assessment"		<eol>
+								20.30.30.322.d	"Scenario: Applicant Status = Application Submitted once all assessments complete
+Given I have finished the application and all required assessments
+Then the Applicant's Status will be Application Submitted You
+have submitted your
+application and all required assessments"		<eol>
+CEN-357	123161	Story	mpatel	Closed	CEN Sprint 6	20.30.50	Assessment - sections should be presented in a randomized order	20.30.50.326.a	"
+Scenario: D376
+sections are randomized
+Given I have started the D376
+assessment
+Then the sections will progress in random order
+
+"		<eol>
+								20.30.50.326.b	"Scenario: D377
+sections are randomized
+Given I have started the D377
+assessment
+Then the sections will progress in random order"		<eol>
+								20.30.50.326.c	"Scenario: Practice Assessment sections are randomized
+Given I have started the Practice Assessment
+Then the sections will progress in random order"		<eol>
+CEN-362	123166	Story	mpatel	Closed	CEN Sprint 6	20.30.60	Assessment - Certify at the end of each assessment that person who took assessment is same person as on the job application (view verbiage)	20.30.60.C362.a	"
+Scenario : Verification same person on assessment esign
+as on application
+Given I am on the Assessment esign
+page
+Then I will see this statement
+And can see a Next button"		<eol>
+CEN-1695	131794	Story	asenn	Backlog	CEN Sprint 9	20.40.10	Admin Portal - Auth User Accesses Assessment Management	"20.40.10.1695
+"	"Scenario: Assessment Management Link takes user with ""HQ Tech Support"" permission to assessment management
+Given I am a user with HQ Tech Support permission on the Admin portal
+When I press Assessment Management link
+Then the system will navigate me to Assessment Management"		<eol>
+CEN-445	123183	Story		Closed	CEN Sprint 8	20.40.10	Assessment - D375 Reading Assessment	20.40.10.768.a	" Scenario: D375 Required of all applicants Given I am on in Assessments area of Applicant Portal And I have submitted an application Then I will see this assessment available 
+"	yes	<eol>
+								20.40.10.768.b 	Scenario: Reading Assessment General Instructions Given I am in the Assessments area of Applicant Portal And I press Reading Assessment Then I will see these instructions	yes	<eol>
+								20.40.10.768.c	 Scenario: Reading Assessment Section Instructions Given I am on the Reading Assessment General Instructions And I proceed to the next page Then I will see the section instructions	yes	<eol>
+								20.40.10.768.d	Scenario: D375 section is 8 minutes Given I am on the Reading Assessment section instructions And I proceed to the next page Then the timer will start with 8 minutes	yes	<eol>
+								20.40.10.768.e	 Scenario: D375 section has 4 questions Given I am on the Reading Assessment section Then I will see 4 questions 	yes	<eol>
+								20.40.10.768.f 	 Scenario: D375 section has 4 questions Given I am on the Reading Assessment section Then I will see 4-5 answers per question	yes	<eol>
+								20.40.10.768.g	 Scenario: D375 has 1 section Given I am on the Reading Assessment And I completed the Reading Assessment Section Then I will see the e-sign page	yes	<eol>
+								20.40.10.768.h	Scenario: Reading assessment complete Given I am in the Assessments area of Applicant Portal And I completed the Reading Assessment Then the system will show this assessment as completed 	yes	<eol>
+								20.40.10.768.i 	Scenario: One try allowed for Reading assessment Given I am in the Assessments area of Applicant Portal And I completed the Reading Assessment And I want to take reading assessment again Then I will see alert 	yes	<eol>
+CEN-444	123248	Story	asenn	Awaiting QA	CEN Sprint 8	20.40.100	Assessments - Allow applicants who indicate interest in supervisory positions to complete different assessments/additional assessment questions	20.40.100	"Scenario: Indicate assessment is required for supervisor position
+Given I have indicated that an assessment is required for supervisor positions
+And I save the assessment
+Then the assessment will be required for applicants who indicate interest in a supervisory position."		<eol>
+CEN-393	123197	Story	mpatel	Closed	CEN Sprint 6	20.40.60	Assessment - Applicant takes designated assessments	20.40.60.670.a	"
+Scenario: D377
+is required for field outreach
+Given I have specified interest in Field Outreach on my application
+And D377
+and D375
+assessment(s) are not completed
+Then I see change in status ""Application in Progress You
+have not taken all of the
+required assessments for the position(s) you have indicated on the application."""		<eol>
+								20.40.60.670.a.i	"
+Scenario: D377
+is required for field outreach
+Given I have specified interest in Field Outreach on my application
+And D377
+and D375
+assessment(s) ARE completed
+Then I see change in status ""Application Submitted You
+have submitted your application
+and all required assessments."""		<eol>
+								20.40.60.670.b	"
+Scenario: D377
+and D375
+is required for Office
+Given I have specified interest in Office on my application
+And D377
+and D375
+assessment(s) are not completed
+Then I see change in status ""Application in Progress You
+have not taken all of the
+required assessments for the position(s) you have indicated on the application."""		<eol>
+								20.40.60.670.b.i	"
+Scenario: D377
+is required for office
+Given I have specified interest in Office positions on my application
+And D377
+and D375
+assessment(s) ARE completed
+Then I see change in status ""Application Submitted You
+have submitted your application
+and all required assessments.""
+@
+@"		<eol>
+								20.40.60.670.c	"
+Scenario: D376
+is required for Field Data Collection
+Given I have specified interest in Field Data Collection on my application
+And D376
+and D375
+assessment(s) are not completed
+Then I see change in status ""Application in Progress You
+have not taken all of the
+required assessments for the position(s) you have indicated on the application."""		<eol>
+								20.40.60.670.c.i	"
+Scenario: D376
+and D375
+is required for Field Data Collection
+Given I have specified interest in Field Data Collection on my application
+And D376
+and D375
+assessment(s) are completed
+Then I see change in status ""Application Submitted You
+have submitted your application
+and all required assessments."""		<eol>
+CEN-384	123188	Story	mpatel	Closed	CEN Sprint 6	20.40.60	Assessment - Present the appropriate assessment(s) based on response to the job interest question (13) on form BC-170D	20.40.60.670.a	"
+Scenario: D377
+is required for field outreach
+Given I have specified interest in Field Outreach on my application
+Then D377
+assessment will display as required"		<eol>
+								20.40.60.670.b	"
+
+Scenario: D377
+is required for office
+Given I have specified interest in Office positions on my application
+Then D377
+assessment will display as required
+@"		<eol>
+								20.40.60.670.c	"
+Scenario: D376
+is required for Field Data Collection
+Given I have specified interest in Field Data Collection on my application
+Then D376
+assessment will display as required"		<eol>
+CEN-401	123205	Story	mpatel	Closed	CEN Sprint 6	20.40.80	Assessment - Require applicant to complete D-377 assessment	20.40.80.676.a	"
+Scenario: D377
+Assessment General Instructions
+DGeivsecnri pIt iaomn in the D377
+Assessment
+Then I will see the D377
+assessment general instructions"	yes	<eol>
+								20.40.80.676.b	"
+Scenario: D377
+Assessment Accountability Section Instructions
+Given I am on the D377
+Assessment
+And I am about to begin the Accountability Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.80.676.c	"
+Scenario: D377
+Assessment Accountability Section is 10 minutes
+Given I am on the D377
+Assessment Accountability Section instructions
+And I proceed to the next page
+Then the timer will start with 10 minutes"	yes	<eol>
+								20.40.80.676.d	"Scenario: D377
+Assessment Customer Service Section Instructions
+Given I am on the D377
+Assessment
+And I am about to begin the Customer Service Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.80.676.e	"Scenario: D377
+Assessment Customer Service Section is 7 minutes
+Given I am on the D377
+Assessment Customer Service Section instructions
+And I proceed to the next page
+Then the timer will start with 7 minutes"	yes	<eol>
+								20.40.80.676.f	"Scenario: D377
+Assessment Interpersonal Section Instructions
+Given I am on the D377
+Assessment
+And I am about to begin the Interpersonal Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.80.676.g	"
+Scenario: D377
+Assessment Interpersonal Section is 7 minutes
+Given I am on the D377
+Assessment Interpersonal Section instructions
+And I proceed to the next page
+Then the timer will start with 7 minutes"	yes	<eol>
+								20.40.80.676.h	"
+Scenario: D377
+Assessment Flexibility Section Instructions
+Given I am on the D377
+Assessment
+And I am about to begin the Flexibility Section
+Then I will see the section instructions"	yes	<eol>
+								'20.40.80.676.i	"
+Scenario: D377
+Assessment Flexibility Section is 7 minutes
+Given I am on the D377
+Assessment Flexibility Section instructions
+And I proceed to the next page
+Then the timer will start with 7 minutes"	yes	<eol>
+								'20.40.80.676.j	"
+Scenario: D377
+Assessment Problem Solving Section Instructions
+Given I am on the D377
+Assessment
+And I am about to begin the Problem Solving Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.80.676.k	"
+Scenario: D377
+Assessment Problem Solving Section is 6 minutes
+Given I am on the D377
+Assessment Problem Solving Section instructions
+And I proceed to the next page
+Then the timer will start with 6 minutes"	yes	<eol>
+								20.40.80.676.l	"
+Scenario: D377
+Assessment Stress Tolerance Section Instructions
+Given I am on the D377
+Assessment
+And I am about to begin the Stress Tolerance Section
+Then I will see the section instructions"	yes	<eol>
+								'20.40.80.676.m	"
+Scenario: D377
+Assessment Stress Tolerance Section is 8 minutes
+Given I am on the D377
+Assessment Stress Tolerance Section instructions
+And I proceed to the next page
+Then the timer will start with 8 minutes"	yes	<eol>
+								20.40.80.676.n	"
+Scenario: D377
+assessment has 31 questions
+DGeivsecnri pIt iaomn taking the D377
+assessment
+Then I will see 31 questions"	yes	<eol>
+								20.40.80.676.o	"
+Scenario: D377
+assessment sections has 45
+answers per question
+Given I am on a D377
+Assessment section
+Then I will see 45
+answers per question"	yes	<eol>
+								'20.40.80.676.p	"
+Scenario: D377
+Assessment has 6 sections
+Given I am on the Last section of the D377
+Assessment
+And I completed the section
+Then I will see the D377
+assessment esign
+page"	yes	<eol>
+CEN-422	123226	Story	mpatel	Closed	CEN Sprint 6	20.40.90	Assessment - Require applicant to complete the D-376 assessment	20.40.90.678.a	"Scenario: D376 instructions
+Assessment General Instructions
+Given I am in the D376
+Assessment
+Then I will see the D376
+assessment general instructions
+"	yes	<eol>
+								20.40.90.678.b	"
+Scenario: D376
+Assessment Accountability Section Instructions
+Given I am on the D376
+Assessment
+And I am about to begin the Accountability Section
+Then I will see the section instructions
+"	yes	<eol>
+								20.40.90.678.c	"
+Scenario: D376
+Assessment Accountability Section is 7 minutes
+Given I am on the D376
+Assessment Accountability Section instructions
+And I proceed to the next page
+Then the timer will start with 7 minutes
+"	yes	<eol>
+								20.40.90.678.d	"Scenario: D376
+Assessment Attention to Detail Section Instructions
+Given I am on the D376
+Assessment
+And I am about to begin the Attention to Detail Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.90.678.e	"Scenario: D376
+Assessment Attention to Detail Section is 7 minutes
+Given I am on the D376
+Assessment Attention to Detail Section instructions
+And I proceed to the next page
+Then the timer will start with 7 minutes
+"	yes	<eol>
+								20.40.90.678.f	"Scenario: D376
+Assessment Decision Making Section Instructions
+Given I am on the D376
+Assessment
+And I am about to begin the Decision Making Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.90.678.g	"
+Scenario: D376
+Assessment Decision Making Section is 8 minutes
+Given I am on the D376
+Assessment Decision Making Section instructions
+And I proceed to the next page
+Then the timer will start with 8 minutes"	yes	<eol>
+								20.40.90.678.h	"
+Scenario: D376
+Assessment Flexibility Section Instructions
+Given I am on the D376
+Assessment
+And I am about to begin the Flexibility Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.90.678.i	"Scenario: D376
+Assessment Flexibility Section is 8 minutes
+Given I am on the D376
+Assessment Flexibility Section instructions
+And I proceed to the next page
+Then the timer will start with 8 minutes"	yes	<eol>
+								20.40.90.678.j	"
+Scenario: D376
+Assessment Interpersonal Skills Section Instructions
+Given I am on the D376
+Assessment DAensdc Ir ipatmio nabout to begin the Interpersonal Skills Section
+Then I will see the section instructions"	yes	<eol>
+								'20.40.90.678.k	"
+Scenario: D376
+Assessment Interpersonal Skills Section is 8 minutes
+Given I am on the D376
+Assessment Interpersonal Skills Section instructions
+And I proceed to the next page
+Then the timer will start with 8 minutes"	yes	<eol>
+								20.40.90.678.l	"
+Scenario: D376
+Assessment Reasoning Section Instructions
+Given I am on the D376
+Assessment
+And I am about to begin the Reasoning Section
+Then I will see the section instructions"	yes	<eol>
+								20.40.90.678.m	"
+Scenario: D376
+Assessment Reasoning Section is 7 minutes
+Given I am on the D376
+Assessment Reasoning Section instructions
+And I proceed to the next page
+Then the timer will start with 7 minutes"	yes	<eol>
+								20.40.90.678.n	"
+Scenario: D376
+assessment has 30 questions
+Given I am taking the D376
+assessment
+Then I will see 30 questions"	yes	<eol>
+								'20.40.90.678.o	"
+Scenario: D376
+assessment sections has 45
+answers per question
+Given I am on a D376
+Assessment section
+Then I will see 45
+answers per question"	yes	<eol>
+								20.40.90.678.p	"
+Scenario: D376
+Assessment has 6 sections
+Given I am on the Last section of the D376
+Assessment
+And I completed the section
+Then I will see the D376
+assessment esign
+page"	yes	<eol>
+CEN-461	123265	Story	adamsenn	Closed		20.60.10	Provide timed assessments	20.60.10.692.a	 Scenario : Timer starts on assessment section Given I am on the section instructions page of an assessment And I proceed to the assessment section Then the timer will start		<eol>
+								20.60.10.692.b	Scenario : Timer stops on proceeding away from assessment section Given the time has started for an assessment section And I proceed beyond the assessment section Then the timer will stop 		<eol>
+								20.60.10.692.c 	Scenario : Timer stops when time runs out Given the time has started for an assessment section And time runs out Then the timer will stop 		<eol>
+CEN-502	123306	Story	mpatel	Closed	CEN Sprint 6	20.60.100	Display message when time left and applicant clicks Next button	20.60.100.712.a	 Scenario : Alert displayed upon navigating away from assessment section with time remaining Given I am on an assessment section And there is time remaining And I want to proceed away from section Then I will see alert 	yes	<eol>
+CEN-467	123271	Story		Closed	CEN Sprint 7	20.60.20	Enforce a configurable time period for completion of an assessment.		"The solution shall enforce a configurable time period for completion of the assessment. This time period may change in the future. The amount of time allotted for each assessment at this time has been defined by the Census Bureau:
+Reading Assessment D-375 - 8 minutes
+Field Data Collection Assessment D-376 - 45 minutes
+Field Outreach/Office Assessment D-377 - 45 minutes
+Measure of Adult English Proficiency D-280B - 15 minutes."		<eol>
+CEN-469	123273	Story	mpatel	Closed	CEN Sprint 7	20.60.30	Assessments - Configurable time for completion of each section of the Field Data Collection (D-376) assessment	20.60.30	"Scenario: Employee/Admin enters time period for section(s) of the Field Data Collection (D-376) Assessment
+Given I have entered a time for section completion in minutes
+When I click the save button
+Then the section will be configured to use this as the maximum time allowed "		<eol>
+CEN-471	123275	Story	mpatel	Closed	CEN Sprint 7	20.60.40	Assessments - Configurable time period for each section of the Field Outreach/Office (D-377) assessment	20.60.40	"Scenario: Employee/Admin enters time period for section(s) of the Field Outreach/Office (D-377) Assessment
+Given I have entered a time for section completion in minutes
+When I click the save button
+Then the section will be configured to use this as the maximum time allowed"		<eol>
+CEN-473	123277	Story	adamsenn	Closed		20.60.50	Provide timer during assessments which shows the time remaining in current section	20.60.50.700.a	"Given I am on instructions for an assessment section
+And I proceed to the assessment section
+Then a timer will display"		<eol>
+								20.60.50.700.b	"Given I am on an assessment section
+And I proceed away from the assessment section
+Then a timer will not display"		<eol>
+CEN-478	123282	Story	mpatel	Closed	CEN Sprint 6	20.60.60	Assessment - Toggle timer visibility during assessment	20.60.60.702.a	"Scenario: timer is displayed by default
+Given I navigate to the questions page of an assessment section
+Then the timer is displayed"		<eol>
+								20.60.60.702.b	"Scenario: Applicant can hide timer
+Given I am on the questions page of an assessment section
+And the timer is displayed
+Then I can hide the timer"		<eol>
+								20.60.60.702.c	"Scenario: Applicant can display timer
+Given I am on the questions page of an assessment section
+And the timer is hidden
+Then I can display the timer"		<eol>
+CEN-487	123291	Story		Closed	CEN Sprint 7	20.60.70	Configure visual and audible warnings of time remaining during assessments	20.60.70.706.a	Scenario: Audible warning on 2 minutes left in assessment Given I am on the questions page of an assessment section And the timer has two minutes left Then the system will sound an auditory alert 		<eol>
+								20.60.70.706.b	 Scenario: Visual warning on 2 minutes left in assessment Given I am on the questions page of an assessment section And the timer has two minutes left Then the system will show a visual alert 		<eol>
+CEN-492	123296	Story	adamsenn	Closed		20.60.80	Display message and gray out all answers if time expires in an assessment	20.60.80.708.a	"Scenario : Questions are grayed out when time runs out
+Given I am on an assessment section
+And time runs out
+Then the questions will be grayed out"		<eol>
+								20.60.80.708.b	"Scenario : Unable to answer questions when time runs out
+Given I am on an assessment section
+And time runs out
+Then I am unable to answer questions"		<eol>
+								20.60.80.708.c	"Scenario : Message when time runs out
+Given I am on an assessment section
+And time runs out
+Then I will see message"		<eol>
+CEN-496	123300	Story	mpatel	Closed	CEN Sprint 6	20.60.90	Assessment - Applicant cannot go back to timed page after leaving it	20.60.90.710.a	"
+Scenario: Applicant cannot navigate backward to a timed question after leaving it
+Given I have just exited a timed question page
+And I attempt to navigate back
+Then the system will not allow me to go back
+
+"	yes	<eol>
+								20.60.90.710.b	"Scenario: Applicant cannot navigate backward to a timed question after leaving it
+Given I have just exited a timed question page
+And I attempt to navigate back
+Then the system will display an error
+Need to adjust the AC because the user can click the back button in their browser. It will
+give them an error if they try to refresh that page or go to the next page <SH
+4/13: the
+AC is vague enough to cover this scenario"	yes	<eol>
+CEN-507	123311	Story	adamsenn	Closed		20.70.10	Provide notice to applicant when attempting to close browser with incomplete assessment	"20.70.10.714.a
+"	"Scenario : Alert upon closing browser on incomplete assessment
+Given I am taking an assessment
+And I attempt to close my browser
+Then I will see alert"		<eol>
+CEN-511	123315	Story	mpatel	Closed	CEN Sprint 6	20.70.20	Assessment - Stop at end of section and resume uncompleted assessment	20.70.20.716.a	"
+Scenario: Applicant can come back to an assessment and complete unstarted sections
+Given I have started an assessment with multiple sections
+And there are sections on that assessment I never started
+And I have reaccessed the incomplete assessment
+Then I will be able to complete the unstarted sections of the assessment"		<eol>
+								20.70.20.716.b	"
+Scenario: Applicant will only be able to complete assessment sections they haven't started
+Given I have started an assessment with multiple sections
+And there are sections on that assessment I never started
+And there are sections I have started
+And I have reaccessed the incomplete assessment
+Then only the sections I have not started will be displayed"		<eol>
+								20.70.20.716.c	"
+Scenario: System alerts user exiting in the middle of an assessment
+Given I have started an assessment
+And there are sections on that assessment I never started
+And there are sections I have started
+And I attempt to exit the assessment
+Then the system will show warning"		<eol>
+CEN-517	123321	Story	mpatel	Closed	CEN Sprint 6	20.70.30	Allow applicant to update assessment responses prior to submission	20.70.30.718.a	Scenario : allow edits on questions if time remains Given I am on an assessment section And time remains And I have answered questions And I want to edit answers Then I must edit answers 	yes	<eol>
+CEN-521	123325	Story	mpatel	Closed	CEN Sprint 6	20.70.40	"Assessment - Keep applicants in the pool as Ineligible, with dashboard status specifying ""No assessment taken""."	20.70.40.720.a	"
+Scenario: Status for applicant that has completed application but not all of assessments is
+displayed
+Given I have completed my application
+And have unfinished assessments
+Then the system will display the status ""Application in Progress You
+have not taken all of
+the required assessments for the position(s) you have indicated on the application"" on the
+applicant profile"		<eol>
+CEN-527	123331	Story	mpatel	Closed	CEN Sprint 6	20.70.50	Assessment - Require applicants to electronically attest that they answered all questions on assessment	20.70.50	"Scenario : E-sign assessment
+Scenario : Esign info table displays upon e-sign
+Given I am on the E-sign page of an assessment
+And I E-sign
+Then I will see an e-sign table with my name and the current date
+"		<eol>
+CEN-532	123336	Story	mpatel	Closed	CEN Sprint 6	20.70.60	Assessment - Electronic Signature information on assessment e-sign (certify that same person whose name is on the application) (table)	20.70.60.725.a	"Scenario : Esign info table displays upon esign
+Given I am on the Esign
+page of an assessment
+And I Esign
+Then I will see an esign
+table with my name and the current date"	yes	<eol>
+CEN-553	123357	Story	jmoore	Awaiting PO Action	CEN Sprint 8	20.80.110	Application - Display disclaimer regarding Veteran's Preference points	"20.80.110.553
+"	"Scenario: Veteran Preference Point disclaimer is shown on Veteran Preference page
+Given I am on the Veteran Preference page of the application
+Then I will see the following disclaimer:
+""Veteran's Preference Points will only be added following validation of documentation by Census Bureau staff."""		<eol>
+CEN-543	123347	Story	mpatel	Closed	CEN Sprint 7	20.80.60	Assessments - Score reading assessment on a range of 0 - 20	20.80.60	"Scenario: Reading Assessment (D-375) is scored when applicant completes it
+Given I have just e-signed my reading assessment
+Then a score ranging between 0-20 will be saved in the database"		<eol>
+CEN-545	123349	Story	mpatel	Closed	CEN Sprint 7	20.80.70	Assessments - Score all versions of the Field Data Collection Assessment on a range of 0-88	20.80.70	"Scenario: Field Data Collection Assessment (D-376) is scored when applicant completes it
+Given I have just e-signed my Field Data Collection Assessment
+Then a score ranging between 0-88 will be saved in the database"		<eol>
+CEN-547	123351	Story	mpatel	Closed	CEN Sprint 7	20.80.80	Assessments - Score all versions of the Field Outreach/Office Assessment on a range of 0-88	20.80.80	"Scenario: Field Outreach/Office Assessment (D-377) is scored when applicant completes it
+Given I have just e-signed my Field Outreach/Office Assessment
+Then a score ranging between 0-88 will be saved in the database"		<eol>
+CEN-549	123353	Story		Closed	CEN Sprint 7	20.80.90	Produce computed score for Field Data Collection Assessment		"As a User, I want the system to produce a Computed Score for the Field Data Collection Assessment, which shall be the total of the Reading Assessment Score and the Field Data Collection Assessment Score, so that applicants meeting the required score may be considered for the position."		<eol>
+CEN-1691	131767	Story	mpatel	Closed	CEN Sprint 7	70.10.10	Admin Portal - Cornerstone Welcome Page	"70.10.10.1691.a
+"	"Scenario: Verify Welcome Page
+Given I am an employee on the Cornerstone Welcome Page
+When I verify options on this page
+Then I will see:
+Welcome Information
+Link to Transcript
+Access to Training Plan
+Link to R&A
+Additional Information section with the following
+System Help
+Field Guides"		<eol>
+CEN-1690	131760	Story	croberson	Closed	CEN Sprint 7	70.10.10	Admin Portal - Cornerstone employee logs into cornerstone	" 70.10.10.1690.a
+"	"Scenario: Error logging in with incorrect credentials
+Given I am on the Employee Login Page
+And I have entered incorrect credentials in the login fields
+When I press the ""Submit"" button
+Then I will see an error
+And will remain on the login page"		<eol>
+								" 70.10.10.1690.b
+"	"Scenario: Access granted to employee portal with correct credentials
+Given I am on the Employee Login Page
+And I have entered valid credentials in the login fields
+When I press the ""Submit"" button
+Then I will be granted access to the employee portal ""Welcome Page"""		<eol>
+CEN-1696	131801	Story		Backlog	CEN Sprint 9	70.10.40	Admin Portal - Entity Level Applicant Management	"70.10.40.1696.a
+"	"Scenario: Applicant Management report shows applicant records at or below user's division level
+Given I am assigned to an ACO, RCC or BC
+And I am on the Applicant Management report
+When I verify incomplete applicant records displayed
+Then report will show applicant records at or below my division level (ACO, RCC, BC)"		<eol>
+								"70.10.40.1696.b
+"	"Scenario: Applicant Management report shows applicant records relevant to assigned ACO
+Given I am assigned to an ACO
+And I am on the Applicant Management report
+When I verify incomplete applicant records displayed
+Then report will show applicant records relevant to my ACO
+And hide records outside of my ACO"		<eol>
+								"70.10.40.1696.c
+"	"Scenario: Applicant Management report shows applicant records relevant to assigned RCC
+Given I am assigned to an RCC
+And I am on the Applicant Management report
+When I verify incomplete applicant records displayed
+Then report will show applicant records relevant to my RCC
+And hide records outside of my RCC"		<eol>
+								"70.10.40.1696.d
+"	"Scenario: Applicant Management report shows all applicant records for users at BC level
+Given I am assigned to BC
+And I am on the Applicant Management report
+When I verify incomplete applicant records displayed
+Then report will show all incomplete applicant records"		<eol>
+CEN-1694	131783	Story	rbeery	Backlog	CEN Sprint 9	70.10.40	Admin Portal - The Admin Portal	" 70.10.40.1694.a
+"	"Scenario: Welcome Page R&A link takes users with BC HQ Tech Support permission to admin portal
+Given I am a user with BC HQ Tech Support permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the Admin Portal
+And I will see link for ""Applicant Management""
+And I will see link for ""Assessment Management"""		<eol>
+								"70.10.40.1694.b
+"	"Scenario: Welcome Page R&A link takes users with 2-Tier CEC Help Desk Staff permission to admin portal
+Given I am a user with 2-Tier CEC Help Desk Staff permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the Admin Portal
+And I will see link for ""Applicant Management"""		<eol>
+								"70.10.40.1694.c
+"	"Scenario: Welcome Page R&A link takes users with ACO Clerk permission to admin portal
+Given I am a user with ACO Clerk permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the Admin Portal
+And I will see link for ""Applicant Management"""		<eol>
+								"70.10.40.1694.d
+"	"Scenario: Welcome Page R&A link takes users with ACO Supervisor permission to admin portal
+Given I am a user with ACO Supervisor permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the Admin Portal
+And I will see link for ""Applicant Management"""		<eol>
+								"70.10.40.1694.e
+
+"	"Scenario: Welcome Page R&A link takes users with RCC Clerk permission to admin portal
+Given I am a user with RCC Clerk permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the Admin Portal
+And I will see link for ""Applicant Management"""		<eol>
+								"70.10.40.1694.f
+"	"Scenario: Welcome Page R&A link takes users with RCC Supervisor permission to admin portal
+Given I am a user with RCC Supervisor permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the Admin Portal
+And I will see link for ""Applicant Management"""		<eol>
+								"70.10.40.1694.g
+"	"Scenario: Welcome Page R&A link takes users with BC HR Functional permission to admin portal
+Given I am a user with BC HR Functional permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the Admin Portal
+And I will see link for ""Applicant Management"""		<eol>
+								"70.10.40.1694.h
+"	"Scenario: Welcome Page R&A link takes Employee users to applicant Portal
+Given I am an employee without Admin permission on the Employee Welcome Page
+When I press the R&A link
+Then the system will navigate me to the applicant portal"		<eol>
+CEN-1782	141045	Story		Backlog	CEN Sprint 9	80.30.20	Admin Portal - Excel Export of Applicant Management Report 	"80.30.20.1782.a
+"	"Scenario: Applicant Management Report can be exported to excel
+Given I am on the applicant management report
+When I press ""Export to Excel"" button
+Then the system will present the file for download at the bottom of my browser window"		<eol>
+								"80.30.20.1782.b
+"	"Scenario: Applicant Management Report export correctly represents the information on Applicant Management screen
+Given I am reviewing the information on the Applicant Management Report export
+When I compare the information on the export to the information on the screen
+Then the data will match exactly"		<eol>
+CEN-1537	127664	Story	khalleran	Backlog	CEN Sprint 9	90.20.20	Onboarding - Transmit and Receive Data and Errors to/from DAPPS (Sprint 8)		"Applicant Submits BC-170d Application – Success/Error
+            Application and Assessment Raw Form Data to DAPPS using JSON File via SFTP
+            Application Completed PDF to DAPPS using PDF File via SFTP
+            Application Upload Attachments (incl Vet Pref) to DAPPS using multiple file types via SFTP
+Applicant Updates and resubmits BC-170d Application – Success/Error**
+            Application and Assessment Raw Form Data to DAPPS using JSON File via SFTP
+            Application Completed PDF to DAPPS using PDF File via SFTP
+            Confirmation of receipt of Applicant update file sent to DAPPS
+Applicant Submits ""Declaration of Federal Employment""/OF-306 Form – Success/Error**
+            OF-306 Form Data to DAPPS using JSON File via SFTP
+            OF-306 Completed PDF to DAPPS using PDF File via SFTP
+            DAPPS send confirmation of receipt of Applicant Package
+Applicant Submits ""Questionnaire for Non Sensitive Positions""/SF-85 Form – Success/Error**
+            SF-85 Form Data to DAPPS using JSON File via SFTP
+            SF-85 Completed PDF to DAPPS using PDF File via SFTP
+Applicant Submits ""Direct Deposit Authorization""/FLD-199 Form – Success/Error**
+            FLD-1199 Form Data to DAPPS using JSON File via SFTP
+Applicant Submits ""New Employee Data""/FLD-168 Form – Error
+            FLD-168 Form Data to DAPPS using JSON File via SFTP
+Applicant Submits ""Record of Employee Address""/CD-415 Form – Success/Error**
+            CD-415 Form Data to DAPPS using JSON File via SFTP
+Applicants Status Changes in DAPPS – Success/Error**
+           DAPPS send Status Update File
+                        Applicant Available
+                        Applicant Location
+                        Applicant Selected
+                        Applicant Favorable
+                        Applicant Hired
+                        Under Review Favorable
+                        Experienced
+                        Ineligible
+                        Separated
+Applicant’s Profile Changes in DAPPS – Success/Error**
+            DAPPS send Profile Update File
+                        Location (RCC/ACO)
+                        Position
+                        Operation
+                        SSN
+                        Email
+"		<eol>
+CEN-1379	124183	Story	khalleran	Closed	CEN Sprint 7	90.20.20	Onboarding - Transmit and Receive Data and Errors to/from DAPPS (Sprint 7)		"Applicant Submits BC-170d Application – Error
+            Application and Assessment Raw Form Data to DAPPS using JSON File via SFTP
+            Application Completed PDF to DAPPS using PDF File via SFTP
+            Application Upload Attachments (incl Vet Pref) to DAPPS using multiple file types via SFTP
+Applicant Updates and resubmits BC-170d Application – Error
+            Application and Assessment Raw Form Data to DAPPS using JSON File via SFTP
+            Application Completed PDF to DAPPS using PDF File via SFTP
+            Confirmation of receipt of Applicant update file sent to DAPPS
+Applicant Submits ""Declaration of Federal Employment""/OF-306 Form – Error
+            OF-306 Form Data to DAPPS using JSON File via SFTP
+            OF-306 Completed PDF to DAPPS using PDF File via SFTP
+            DAPPS send confirmation of receipt of Applicant Package
+Applicant Submits ""Questionnaire for Non Sensitive Positions""/SF-85 Form – Error
+            SF-85 Form Data to DAPPS using JSON File via SFTP
+            SF-85 Completed PDF to DAPPS using PDF File via SFTP
+Applicant Submits ""Direct Deposit Authorization""/FLD-199 Form – Error
+            FLD-1199 Form Data to DAPPS using JSON File via SFTP
+            FLD-1199 Completed PDF to DAPPS using PDF File via SFTP
+Applicant Submits ""New Employee Data""/FLD-168 Form – Error
+            FLD-168 Form Data to DAPPS using JSON File via SFTP
+            FLD-168 Completed PDF to DAPPS using PDF File via SFTP
+Applicant Submits ""Record of Employee Address""/CD-415 Form – Error
+            CD-415 Form Data to DAPPS using JSON File via SFTP
+            CD-415 Completed PDF to DAPPS using PDF File via SFTP
+Applicants Status Changes in DAPPS – Error
+           DAPPS send Status Update File
+                        Applicant Available
+                        Applicant Location
+                        Applicant Selected
+                        Applicant Favorable
+                        Applicant Hired
+                        Under Review Favorable
+                        Experienced
+                        Ineligible
+                        Separated
+Applicant’s Profile Changes in DAPPS – Error
+            DAPPS send Profile Update File
+                        Location (RCC/ACO)
+                        Position
+                        Operation
+                        SSN
+                        Email"		<eol>
+CEN-1530	127638	Story	jvega	In Dev	CEN Sprint 8	90.20.20	Development: DAPPS/Bi-directional communication (Sprint 8)		"Applicant Submits BC-170d Application & Assessment Package – Success & Fail
+            Application and Assessment Raw Form Data to DAPPS using JSON File via SFTP
+            Application Completed PDF to DAPPS using PDF File via SFTP
+            Application Upload Attachments (incl Vet Pref) to DAPPS using multiple file types via SFTP
+Applicant Updates and resubmits BC-170d Application – Success & Fail
+            Application and Assessment Raw Form Data to DAPPS using JSON File via SFTP
+            Application Completed PDF to DAPPS using PDF File via SFTP
+            Confirmation of receipt of Applicant update file sent to DAPPS
+Applicant Submits ""Declaration of Federal Employment""/OF-306 Form – Success & Fail
+           OF-306 Form Data to DAPPS using JSON File via SFTP
+            OF-306 Completed PDF to DAPPS using PDF File via SFTP
+            DAPPS send confirmation of receipt of Applicant Package
+Applicant Submits ""Questionnaire for Non Sensitive Positions""/SF-85 Form – Success & Fail
+            SF-85 Form Data to DAPPS using JSON File via SFTP
+            SF-85 Completed PDF to DAPPS using PDF File via SFTP
+Applicant Submits ""Direct Deposit Authorization""/FLD-199 Form – Success & Fail
+           FLD-1199 Form Data to DAPPS using JSON File via SFTP
+            FLD-1199 Completed PDF to DAPPS using PDF File via SFTP
+Applicant Submits ""New Employee Data""/FLD-168 Form – Success & Fail
+           FLD-168 Form Data to DAPPS using JSON File via SFTP
+            FLD-168 Completed PDF to DAPPS using PDF File via SFTP
+Applicant Submits ""Record of Employee Address""/CD-415 Form – Success & Fail
+           CD-415 Form Data to DAPPS using JSON File via SFTP
+            CD-415 Completed PDF to DAPPS using PDF File via SFTP
+Applicant’s Status Changes in DAPPS – Success
+            DAPPS send Status Update File
+                        Applicant Available
+                        Applicant Location
+                        Applicant Selected
+                        Applicant Favorable
+                        Applicant Hired
+                        Under Review Favorable
+                        Experienced
+                        Ineligible
+                        Separated
+Applicant’s Profile Changes in DAPPS - Success
+            DAPPS send Profile Update File
+                        Location (RCC/ACO)
+                        Position
+                        Operation
+                        SSN
+                        Email"		<eol>
+CEN-1598	129179	Story	jvega	Closed	CEN Sprint 7	90.30.120	"Onboarding - Submit ""Direct Deposit Authorization""/FLD-1199 Form"	90.30.120.1810.a	"Applicant Accesses Form
+Given that I am on the Applicant Portal
+When I click to access the FLD-1199 form
+Then a page opens with all the fields I need to enter for the form."		<eol>
+								90.30.120.1810.b	"Applicant's status <> ""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status does not equal ""Selected - Background Check Complete""
+When I attempt to access the FLD-1199 form
+Then I am unable to see the form."		<eol>
+								90.30.120.1810.c	"Applicant's status changes to ""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status equals ""Selected - Background Check Complete""
+When I attempt to access the FLD-1199 form
+Then I am able to see the form."		<eol>
+								90.30.120.1810.d 	"Applicant Saves In-Progress Form - Success
+Given that I am viewing the FLD-1199 form
+And have entered all required fields – change 5/22/2017-MW
+When I click Save
+Then I am returned to the Applicant Portal
+And the FLD-1199 indicates completion by changing to green – change 5/22/2017-MW
+And can access my saved form again."		<eol>
+								90.30.120.1810.e	"Applicant Saves In-Progress Form - Success
+Given that I have started and saved my FLD-1199 Form
+When I access the form again
+Then I see the data I previously entered
+And can update and complete the form."		<eol>
+								90.30.120.1810.f	"Applicant Submits Form - Success
+Given that I have completed the form fields
+When I click Save and E-sign
+Then I will be returned to the Applicant Portal And this form will be submitted as part of the on-boarding forms packet to DAPPS."		<eol>
+CEN-1596	129177	Story	jvega	Closed	CEN Sprint 7	90.30.120	"Onboarding - Submit ""Direct Deposit Authorization""/FLD-1199 Form - Applicant Selection "		Same as above		<eol>
+CEN-1377	124181	Story	dsanchez	Closed	CEN Sprint 6	90.30.120	"Onboarding - Submit ""Direct Deposit Authorization""/FLD-1199 Form - English"	90.30.120.1810.d	" Applicant Accesses Form in English
+Given that I am on the Applicant Portal
+When I need to access the form in English
+Then I am able to.
+"		<eol>
+CEN-1448								90.30.120.1810.e	" Applicant Submits Form Success
+Given that I have completed the form fields
+When I click Submit
+Then my form is submitted."		<eol>
+CEN-1382	124186	Story	jvega	Closed	CEN Sprint 7	90.30.20	"Onboarding - Submit ""Declaration of Federal Employment""/OF-306 Form"	90.30.20.1821.a	"Applicant's status <> ""Selected - Offered Job""
+Given that I am on the Applicant Portal
+And my Applicant Status does not equal ""Selected - Offered Job""
+When I attempt to access the OF-306 form
+Then I am unable to."		<eol>
+								90.30.20.1821..b	"Applicant's status changes to ""Selected - Offered Job""
+Given that I am on the Applicant Portal
+And my Applicant Status equals ""Selected - Offered Job""
+When I attempt to access the OF-306 form
+Then I am able to."		<eol>
+								90.30.20.1821..c	"Applicant Accesses Form
+Given that I am on the Applicant Portal
+When I click to access the OF-306 form
+Then a page opens with all the fields I need to enter for the form."		<eol>
+								90.30.999.1821.d	"Applicant Saves In-Progress Form - Success
+Given that I am viewing the OF-306 form
+And have entered some valid data
+When I click Save
+Then I am returned to the Applicant Portal
+And can access my saved form again."		<eol>
+								90.30.999.1821.e	"Applicant Saves In-Progress Form - Success
+Given that I have started and saved my OF-306 Form
+When I access the form again
+Then I see the data I previously entered
+And can update and complete the form."		<eol>
+								90.30.999.1821.f 	"Applicant Submits Form - Success
+Given that I have completed the form fields
+When I click Save and E-sign
+Then my form will be submitted when both pre-background check forms have been signed."		<eol>
+								90.30.20.1821..g 	"Applicant Submits Form - Success
+Given that I have completed the form fields
+When I click Submit
+Then my form is submitted."		<eol>
+CEN-1602	129326	Story	jvega	Closed	CEN Sprint 7	90.30.50	"Onboarding - Submit ""New Employee Data""/FLD168 Form"	90.30.50.a	"Applicant Accesses Form
+Given that I am on the Applicant Portal
+When I click to access the FLD-168 form
+Then a page opens with all the fields I need to enter for the form."		<eol>
+								90.30.50.b	"Applicant's status <> ""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status does not equal ""Selected - Background Check Complete""
+When I attempt to access the FLD-168 form
+Then I am unable to see the form."		<eol>
+								90.30.50.c 	"Applicant's status changes to ""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status equals ""Selected - Background Check Complete""
+When I attempt to access the FLD-168 form
+Then I am able to see the form."		<eol>
+								90.30.50.d 	"Applicant Saves In-Progress Form - Success
+Given that I am viewing the FLD-168 form
+And have entered some valid data
+When I click Save
+Then I am returned to the Applicant Portal
+And can access my saved form again."		<eol>
+								90.30.50.e	"Applicant Saves In-Progress Form - Success
+Given that I have started and saved my FLD-168 Form
+When I access the form again
+Then I see the data I previously entered
+And can update and complete the form."		<eol>
+								90.30.50.f	"Applicant Submits Form - Success
+Given that I have completed the form fields
+When I click Save
+Then my form will be submitted when both pre-background check forms have been signed."		<eol>
+CEN-1595	129176	Story	mpatel	Closed	CEN Sprint 6	90.30.50	"Develop form:  FLD-168 ""New Employee Data"" - Spanish"	10.20.140.b	"Applicant Completes FLD-168 - Spanish
+Given that I have passed my background check
+And Onboarding Forms become available
+And the culture setting on my browser is Spanish
+When I access the form, I see Spanish text
+Then I can enter my data in Spanish
+And submit it."		<eol>
+CEN-1383	124187	Story	jvega	Closed	CEN Sprint 7	90.30.50	"Onboarding - Submit ""New Employee Data""/FLD168 Form "		"a Applicant's status <>""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status does not equal ""Selected - Background Check Complete""
+When I attempt to access the FLD-168  form
+Then I am unable to."		<eol>
+									"b Applicant's status changes to ""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status equals ""Selected - Background Check Complete""
+When I attempt to access the FLD-168  form
+Then I am able to."		<eol>
+CEN-1605	129330	Story	cdyess	Closed	CEN Sprint 7	90.30.70	"Onboarding - Submit ""Record of Employee Address""/CD-415 Form - Applicant Selection"	90.30.70.a	"Applicant Accesses Form
+Given that I am on the Applicant Portal
+When I click to access the CD-415 form
+Then a page opens with all the fields I need to enter for the form."		<eol>
+								90.30.70.b	"Applicant's status <> ""Selected - Background Check Complete""
+ Given that I am on the Applicant Portal
+ And my Applicant Status does not equal ""Selected - Background Check Complete""
+ When I attempt to access the CD-415 form
+ Then I am unable to see the form."		<eol>
+								90.30.70.c	"Applicant's status changes to ""Selected - Background Check Complete""
+ Given that I am on the Applicant Portal
+ And my Applicant Status equals ""Selected - Background Check Complete""
+When I attempt to access the CD-415 form
+ Then I am able to see the form."		<eol>
+								90.30.70.d	"Applicant Saves In-Progress Form - Success
+ Given that I am viewing the CD-415 form
+ And have entered all required data
+ When I click Save
+Then I am returned to the Applicant Portal
+ And can access my saved form again."		<eol>
+								90.30.70.e	" Applicant Saves In-Progress Form - Success
+ Given that I have started and saved my CD-415 Form
+When I access the form again
+ Then I see the data I previously entered
+ And can update and complete the form."		<eol>
+								90.30.70.f	"Applicant Submits Form - SuccessGiven that I have completed the form fields
+When I click Save and E-sign
+Then I will be returned to the Applicant Portal And this form will be submitted as part of the on-boarding forms packet to DAPPS."		<eol>
+CEN-1372	124176	Story	cdyess	Closed	CEN Sprint 7	90.30.70	"Onboarding - Submit ""Record of Employee Address""/CD-415 Form"	90.30.70..a	"Applicant's status <> ""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status does not equal ""Selected - Background Check Complete""
+When I attempt to access the CD-415 form
+Then I am unable to see the form."		<eol>
+								90.30.70.b 	"Applicant's status changes to ""Selected - Background Check Complete""
+Given that I am on the Applicant Portal
+And my Applicant Status equals ""Selected - Background Check Complete""
+When I attempt to access the CD-415 form
+Then I am able to see the form."		<eol>
+								90.30.70.c	"Applicant Accesses Form
+Given that I am on the Applicant Portal
+When I click to access the CD-415 form
+Then a page opens with all the fields I need to enter for the form."		<eol>
+								90.30.70.d	"Applicant Submits Form - Success
+Given that I have completed the form fields
+And my other Onboarding forms have been completed
+When I click Submit
+Then my forms are submitted."		<eol>
+CEN-1529	127637	Story	dsanchez	Awaiting QA	CEN Sprint 8	90.30.999	"Onboarding - Submit ""Questionnaire for Non-Sensitive Positions""/SF-85 Form (Sprint 7)"	90.30.999.1811.a	"Applicant's status <> ""Selected - Offered Job""
+Given that I am on the Applicant Portal
+And my Applicant Status does not equal ""Selected - Offered Job""
+When I attempt to access the SF-85 form
+Then I am unable to see the form."		<eol>
+								90.30.999.1811.b	"Applicant's status changes to ""Selected - Offered Job""
+Given that I am on the Applicant Portal
+And my Applicant Status equals ""Selected - Offered Job""
+When I attempt to access the SF-85 form
+Then I am able to see the form."		<eol>
+								90.30.999.1811.c 	"Applicant Accesses Form
+Given that I am on the Applicant Portal
+When I click to access the SF-85 form
+Then a page opens with all the fields I need to enter for the form."		<eol>
+								90.30.999.1811.d	"Applicant Saves In-Progress Form - Success
+Given that I am viewing the SF-85 form
+And have entered some valid data
+When I click Save
+Then I am returned to the Applicant Portal
+And can access my saved form again."		<eol>
+								90.30.999.1811.e	"Applicant Accesses Saved,In-Progress Form 
+Given that I have started and saved my SF-85 Form
+When I access the form again
+Then I see the data I previously entered
+And can update and complete the form."		<eol>
+								90.30.999.1811.f	"Applicant Submits Form - Success
+Given that I have completed the form fields
+When I click Save and E-sign
+Then my form will be submitted when both pre-background check forms have been signed."		<eol>
+CEN-1521	127573	Defect	mpatel	Closed	CEN Sprint 6		500 Error Clicking on Cont to Assessments				<eol>
+CEN-1731	139018	Defect	msherburne	Closed	CEN Sprint 7		Selective Service/Delete Attachment				<eol>
+CEN-1736	139130	Defect	asenn	Closed	CEN Sprint 7		Assessment Timeout/Goes to wrong location				<eol>
+CEN-1619	129779	Story	mburnett	Closed	CEN Sprint 7		"â€¢	Remediate build warnings or suppress false-positives (2)"				<eol>
+CEN-1618	129778	Story	asenn	Closed	CEN Sprint 7		"â€¢	Get builds to DEV-INT happening correctly, remediate issues (2)"				<eol>
+CEN-1620	129780	Story	mburnett	Closed	CEN Sprint 7		Enable/require SSL in appropriate environments (1)				<eol>
+CEN-1617	129777	Story	asenn	Closed	CEN Sprint 7		Review RoslynSecurityGuard and resolve any issues (2)				<eol>
+CEN-1709	137297	Story	mpatel	Closed	CEN Sprint 7		Add Topshelf to Windows Service				<eol>
+CEN-1711	137551	Defect		Backlog			Application - Availability chart showing offscreen for mobile devices				<eol>
+CEN-1701	136721	Defect	asenn	Ready For Testing	CEN Sprint 7		Unable to Complete Registration Process				<eol>
+CEN-1713	137555	Defect	ahutchison	Closed	CEN Sprint 7		Are you taken to the Transportation Page? - Font Issue				<eol>
+CEN-1710	137550	Defect	cdyess	Closed	CEN Sprint 7		There is an error in the Availability check boxes that needs to be changed to select all boxes and not just afternoon or the logic needs to indicate that all are selected.				<eol>
+CEN-1726	138884	Defect	ahutchison	Closed	CEN Sprint 7		"D-376 ""thinks"" it times out even though it didn't"				<eol>
+CEN-1712	137554	Defect	mpatel	Closed	CEN Sprint 7		Tester received an error message that the Place of Birth State or Country maximum length is 6				<eol>
+CEN-1737	139279	Defect		Backlog	CEN Sprint 9		BC-170 PDF/default country/states merge into PDF when no values entered (data is probably saving with defaults)				<eol>
+CEN-1784	141487	Story	mburnett	Backlog	CEN Sprint 8		Caching Issue				<eol>
+CEN-1781	140999	Story		Backlog	CEN Sprint 9		Solution Clean Up for Prod				<eol>
+CEN-1783	141486	Story	dsanchez	Awaiting QA	CEN Sprint 8		Persist Elma Error Logs				<eol>
+CEN-1732	139019	Story	khalleran	Awaiting QA	CEN Sprint 8		TECHNICAL-DAPPS Integration Test Stub				<eol>
+CEN-1738	139297	Defect	jvega	Closed	CEN Sprint 8		"OF-306 Form: NULL Dates Returning ""1/1/2000"""				<eol>
+CEN-1785	142130	Story	asenn	Closed	CEN Sprint 8		Save ELMAH errors to database to capture HTTP 500 errors during load testing				<eol>
+CEN-1789	143102	Defect		Backlog	CEN Sprint 9		If you select male and make a selection for military service   and switch to female the selections are not reset				<eol>
+CEN-1788	143100	Defect		Backlog	CEN Sprint 9		Attachements For Vetrans Preference is not being saved. When I am in the esign page there is the notification to add the documents and when I navigate between the application pages I see the alert				<eol>
+CEN-1786	142575	Story	asenn	In Dev	CEN Sprint 8		BLOCKED: fix woff2 404 issues (again)				<eol>
+CEN-1787	143073	Defect	croberson	Backlog	CEN Sprint 9		Password Characters 				<eol>
+CEN-1807		Story		Backlog	CEN Sprint 9		Census - Update and Retrieve SSN for applicant		"Scenario: Ability to save unique SSN
+Given I am a candidate on the personal info page of the application
+And I have entered a unique SSN
+And  have satisfied all required fields
+When I click next
+Then the system will validate SSN
+Save SSN
+And navigate me to the next page of the application"		<eol>
+									"Ability verify SSN is saved
+Given I am a candidate on the second personal info page of the application
+And I have saved my SSN on the first personal info page of the application
+When I navigate back to the first personal info page of the application
+Then the system will show the SSN I entered and saved on the first personal info page of the application
+"		<eol>
+CEN-1808		Story		In Dev	CEN Sprint 9		Hire/R&A External-Applicant to CSOD Internal-Employee	100.80.1808.a 	"Newly hired employee accesses LMS
+Given that I have been hired by Census
+And have received my status update email from R&A
+When I click the link to login to LMS
+Then I am taken to LMS
+And I can login using my personal email address and ____ what password?"		<eol>
+								100.80.1808.b	"Newly hired employee (non-Admin) can not access R&A
+Given that I have been hired by Census
+And have accessed the LMS
+When I attempt to login to R&A
+Then I am unable to login."		<eol>
+CEN-1809		Story		In Dev	CEN Sprint 9		Term-Favorable/R&A CSOD Internal/Employee to External/Applicant	100.80.1808.a	"Favorably Termed Employee accesses R&A
+Given that I have been Favorably Terminated by Census
+And have received my status update email from R&A
+When I click the link to login to R&A
+Then I am taken to R&A
+And I can login using my personal email address and ____ what password?
+"		<eol>
+								100.80.1808.b	"Favorably Termed Employee cannot access LMS
+Given that I have been Favorably Terminated by Census
+And have received my status update email from R&A
+When I attempt to login to LMS
+Then I am unable to login."		<eol>
+CEN-1810		Story		In Dev	CEN Sprint 9		Term-Unfavorable/R&A to CSOD/No longer in Applicant Pool	100.80.1808.a	"Unfavorably Termed Employee accesses R&A
+Given that I have been Unfavorably Terminated by Census
+And have received my status update email from R&A
+When I attempt to login to R&A
+Then I am unable to login."		<eol>
+								100.80.1808.b	"Unfavorably Termed Employee cannot access LMS
+Given that I have been Unfavorably Terminated by Census
+And have received my status update email from R&A
+When I attempt to login to LMS
+Then I am unable to login."		<eol>
