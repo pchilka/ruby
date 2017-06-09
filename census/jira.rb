@@ -28,9 +28,6 @@ File.readlines(FILE, '<eol>').each do |line|
         $sprint = mystrip(fields[5]);
         $reqid  = mystrip(fields[6]);
         $summary= mystrip(fields[7]);
-        if $ikey=="CEN-13"
-            puts $ikey;
-        end
     end
 	$testid = mystrip(fields[8]);
     $test   = mystrip(fields[9]);
