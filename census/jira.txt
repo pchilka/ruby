@@ -1,4 +1,3 @@
-Issue key	Issue id	Issue Type	Assignee	Status	Sprint	Requirement	Summary	Acceptance Scenario ID	Acceptance Scenario	Automated?	<eol>
 CEN-1686	131730	Story	cdyess	Backlog	CEN Sprint 9	10.10.20	Admin Portal - Auth User accesses Applicant Management				<eol>
 								10.10.20.1686.a	"Scenario: Applicant Management Link navigates to Applicant Management report
 Given I am in the Admin Portal

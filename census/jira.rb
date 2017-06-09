@@ -2,8 +2,16 @@ FILE = "jira.txt";
 COL1 = 200;
 COL2 = 800;
 
-def mychomp(str)
-    str.nil? ? str : str.chomp;
+def mystrip(str)
+    if !str.nil? then
+        if str =~ /"(.*)"/m
+            return $1.strip;
+        else
+            return str.strip;
+        end
+    else
+        return str;
+    end
 end
 
 puts "<html>";
@@ -11,19 +19,21 @@ puts "<body>";
 puts "<table>";
 File.readlines(FILE, '<eol>').each do |line|
 	fields = line.split /\t/;
-	temp   = fields[0].strip;
-    if temp =~ /^CEN-/ then
-        $ikey   = temp;
-        $iid    = fields[1];
-        $itype  = fields[2];
-        $assign = fields[3];
-        $status = fields[4];
-        $sprint = fields[5];
-        $reqid  = mychomp(fields[6]);
-        $summary= mychomp(fields[7]);
+    if mystrip(fields[0]) =~ /^CEN-/ then
+        $ikey   = mystrip(fields[0]);
+        $iid    = mystrip(fields[1]);
+        $itype  = mystrip(fields[2]);
+        $assign = mystrip(fields[3]);
+        $status = mystrip(fields[4]);
+        $sprint = mystrip(fields[5]);
+        $reqid  = mystrip(fields[6]);
+        $summary= mystrip(fields[7]);
+        if $ikey=="CEN-13"
+            puts $ikey;
+        end
     end
-	$testid = mychomp(fields[8]);
-    $test   = mychomp(fields[9]);
+	$testid = mystrip(fields[8]);
+    $test   = mystrip(fields[9]);
 	$test.gsub!(/\n\n+/,"\n") if !$test.nil?
     if !($ikey == "" && $reqid == "" && $testid == "" && $test == "") then
         puts "<tr style=\"background-color:powderblue\">";
