@@ -69,43 +69,9 @@ class Scenarios
 end
 
 # Create template.
-template = %{
-  <html>
-    <head><title>C-SHaRPS JIRA Product Backlog</title></head>
-    <body>
-      <table>
-        <% @scenarios.each do |s| %>
-            <tr style="background-color:powderblue">
-                <td style="text-align:right" valign="top">REQUIREMENT ID:</td>
-                <td valign="top"><%= s.reqid %></td>
-            </tr>
-            <tr>
-                <td style="text-align:right" valign="top">JIRA ISSUE KEY:</td>
-                <td valign="top"><%= s.ikey %></td>
-            </tr>
-            <tr>
-            <td style="text-align:right" valign="top">JIRA ISSUE TYPE:</td>
-            <td valign="top"><%= s.itype %></td>
-            </tr>
-            <tr>
-            <td style="text-align:right" valign="top">SUMMARY:</td>
-            <td valign="top"><%= s.summary %></td>
-            </tr>
-            <tr>
-            <td style="text-align:right" valign="top">TEST ID:</td>
-            <td valign="top"><%= s.testid %></td>
-            </tr>
-            <tr>
-            <td style="text-align:right" valign="top">SCENARIO:</td>
-            <td valign="top"><pre><%= s.test %></pre></td>
-            </tr>
-        <% end %>
-      </table>
-    </body>
-  </html>
-}.gsub(/^  /, '')
+template  = File.read("jira.erb").gsub(/^  /, '');
 
-rhtml = ERB.new(template)
+rhtml     = ERB.new(template)
 
 # Set up template data.
 scenarios = Scenarios.new("jira.txt");
