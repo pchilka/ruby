@@ -88,16 +88,16 @@ template = %{
             <td valign="top"><%= s.itype %></td>
             </tr>
             <tr>
-            <td style="text-align:right" valign="top">SUMMARY:</td><td valign="top">
-            <%= s.summary %></td>
+            <td style="text-align:right" valign="top">SUMMARY:</td>
+            <td valign="top"><%= s.summary %></td>
             </tr>
             <tr>
-            <td style="text-align:right" valign="top">TEST ID:</td><td><pre>
-            <%= s.testid %></pre></td>
+            <td style="text-align:right" valign="top">TEST ID:</td>
+            <td valign="top"><%= s.testid %></td>
             </tr>
             <tr>
-            <td style="text-align:right" valign="top">SCENARIO:</td><td><pre>
-            <%= s.test %></pre></td>
+            <td style="text-align:right" valign="top">SCENARIO:</td>
+            <td valign="top"><pre><%= s.test %></pre></td>
             </tr>
         <% end %>
       </table>
