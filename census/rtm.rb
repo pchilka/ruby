@@ -4,7 +4,7 @@
 # Author : Pradeep Chilka
 # Created: 19th May 2017
 
-FDIR = "features";
+FDIR = "Features";
 
 Dir.foreach(FDIR) do |file|
     if file =~ /\.feature$/
@@ -12,12 +12,15 @@ Dir.foreach(FDIR) do |file|
         File.open(filepath).each do |line|
             if line =~ /^\s*Scenario/ 
                 if line =~ /^\s*Scenario\s*:?\s*(.*?)(\d+\.\d+\.\d+)(.*$)/ 
-                    print $2 + "\t";
-                    print "Scenario: " + $1 + $2 + $3 + "\t";
+                    print $2 + "|";
+                    print $2 + $3.strip + "|";
+                    line.gsub!(',',';');
+                    print "#{line.chop.strip}|";
                     print file + "\n";
                 elsif line =~ /^\s*Scenario\s*:?\s*(.*)$/ 
-                    print "" + "\t";
-                    print "Scenario: " + $1 + "\t";
+                    print "" + "|";
+                    print "" + "|";
+                    print "ERROR: Scenario: " + $1 + "|";
                     print file + "\n";
                 end
             end
