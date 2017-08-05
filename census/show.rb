@@ -44,8 +44,8 @@ Net::SFTP.start(options[:ftp], options[:username], :password => options[:passwor
     sftp.dir.foreach(f) do |entry|
       atim = Time.at(entry.attributes.atime); 
       mtim = Time.at(entry.attributes.mtime); 
-      utc  = atim.ctime;
-      local= Time.at(entry.attributes.atime-4*60*60).ctime; 
+      utc  = atim.strftime("%m/%d/%y %H:%M:%S");
+      local= Time.at(entry.attributes.atime-4*60*60).strftime("%m/%d/%y %H:%M:%S");
       if entry.attributes.file?
               if options[:date].nil?
 		      printf "%s,%s,%s,%s\n",entry.name,f,utc,local;
