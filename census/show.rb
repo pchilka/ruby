@@ -16,15 +16,8 @@ DIRS = ["Applicant/Packages",
 	"Applicant/Updates/Response/InProgress",
 	"Applicant/Updates/Response/Completed"];
 	
-json     = `gpg -d -r pchilka@yahoo.com .config.gpg`;
-config   = JSON.parse(json);
 
-# setting default to Pilot environment
-ftp      = config["pilot"]["ftp"];
-username = config["pilot"]["username"];
-password = config["pilot"]["password"];
-
-options = {:date => nil, :ftp => ftp, :username => username, :password => password};
+options = {:date => nil, :ftp => nil, :username => nil, :password => nil};
 
 OptionParser.new do |opts|
   opts.banner = "Usage: ruby showp.rb [options]";
@@ -36,7 +29,22 @@ OptionParser.new do |opts|
     options[:username] = config["stage"]["username"];
     options[:password] = config["stage"]["password"];
   end
+  opts.on("-p", "--pilot", "Specify pilot environment [default") do
+    options[:ftp]      = config["pilot"]["ftp"];
+    options[:username] = config["pilot"]["username"];
+    options[:password] = config["pilot"]["password"];
+  end
 end.parse!
+
+json     = `gpg -d -r pchilka@yahoo.com .config.gpg`;
+config   = JSON.parse(json);
+
+# setting default to Pilot environment
+if (options[:ftp].nil?)
+    options[:ftp]      = config["pilot"]["ftp"];
+    options[:username] = config["pilot"]["username"];
+    options[:password] = config["pilot"]["password"];
+end
 
 Net::SFTP.start(options[:ftp], options[:username], :password => options[:password]) do |sftp|
   # list the entries in a directory
