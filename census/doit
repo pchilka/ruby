@@ -1,3 +1,3 @@
 #!/bin/bash
-ruby showp.rb > foo                                     
+ruby show.rb > foo                                     
 ruby get.rb foo $1

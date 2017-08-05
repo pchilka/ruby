@@ -1,2 +1,4 @@
 census/.config
+census/.config.gpg
 keys/pchilka.private.gpg
+keys/revoke.asc

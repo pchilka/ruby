@@ -44,14 +44,18 @@ Net::SFTP.start(options[:ftp], options[:username], :password => options[:passwor
     sftp.dir.foreach(f) do |entry|
       atim = Time.at(entry.attributes.atime); 
       mtim = Time.at(entry.attributes.mtime); 
+      utc  = atim.ctime;
+      local= Time.at(entry.attributes.atime-4*60*60).ctime; 
       if entry.attributes.file?
               if options[:date].nil?
-		      printf "%-40s: %s\n", f, entry.name;
-		      puts entry.longname;
+		      printf "%s,%s,%s,%s\n",entry.name,f,utc,local;
+#		      printf "%-40s: %s\n", f, entry.name;
+#		      puts entry.longname;
               else
 		      if options[:date] == atim.to_date;
-			      printf "%-40s: %s\n", f, entry.name;
-			      puts entry.longname;
+			      printf "%s,%s,%s,%s\n",entry.name,f,utc,local;
+#			      printf "%-40s: %s\n", f, entry.name;
+#			      puts entry.longname;
 	#                     puts "atime= " + atim.asctime;
 	#                     puts "mtime= " + mtim.asctime;
 		      end
