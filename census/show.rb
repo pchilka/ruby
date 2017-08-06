@@ -24,6 +24,9 @@ OptionParser.new do |opts|
   opts.on("-d", "--date date", "Specify date to filter") do |date|
     options[:date] = Date.parse(date);
   end
+  opts.on("-t", "--today", "Specify today's date to filter") do
+    options[:date] = Date.today;
+  end
   opts.on("-s", "--stage", "Specify stage environment [default pilot]") do
     options[:ftp]      = config["stage"]["ftp"];
     options[:username] = config["stage"]["username"];
