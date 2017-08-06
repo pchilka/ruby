@@ -30,7 +30,7 @@ OptionParser.new do |opts|
 	opts.on("-s", "--stage", "Specify stage environment [default pilot]") do
 		options[:env] = "stage";
 	end
-	opts.on("-p", "--pilot", "Specify pilot environment [default") do
+	opts.on("-p", "--pilot", "Specify pilot environment [default]") do
 		options[:env] = "pilot";
 	end
 end.parse!
