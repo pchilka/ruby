@@ -20,8 +20,8 @@ DIRS = ["Applicant/Packages",
 options = {:date => nil, :env => "pilot", :ftp => nil, :username => nil, :password => nil};
 
 OptionParser.new do |opts|
-	opts.banner = "Usage: ruby showp.rb [options]";
-	opts.on("-d", "--date date", "Specify date to filter") do |date|
+	opts.banner = "Usage: ruby show.rb [options]";
+	opts.on("-d", "--date date", "Specify date to filter, e.g. -d \"2017-08-04\"") do |date|
 		options[:date] = Date.parse(date);
 	end
 	opts.on("-t", "--today", "Specify today's date to filter") do
