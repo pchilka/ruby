@@ -17,7 +17,7 @@ DIRS = ["Applicant/Packages",
 	"Applicant/Updates/Response/Completed"];
 	
 
-options = {:date => nil, :ftp => nil, :username => nil, :password => nil};
+options = {:date => nil, :env => "pilot", :ftp => nil, :username => nil, :password => nil};
 
 OptionParser.new do |opts|
 	opts.banner = "Usage: ruby showp.rb [options]";
@@ -28,14 +28,10 @@ OptionParser.new do |opts|
 		options[:date] = Date.today;
 	end
 	opts.on("-s", "--stage", "Specify stage environment [default pilot]") do
-		options[:ftp]      = config["stage"]["ftp"];
-		options[:username] = config["stage"]["username"];
-		options[:password] = config["stage"]["password"];
+		options[:env] = "stage";
 	end
 	opts.on("-p", "--pilot", "Specify pilot environment [default") do
-		options[:ftp]      = config["pilot"]["ftp"];
-		options[:username] = config["pilot"]["username"];
-		options[:password] = config["pilot"]["password"];
+		options[:env] = "pilot";
 	end
 end.parse!
 
@@ -43,7 +39,11 @@ json     = `gpg -d -r pchilka@yahoo.com .config.gpg`;
 config   = JSON.parse(json);
 
 # setting default to Pilot environment
-if (options[:ftp].nil?)
+if (options[:env] == "stage")
+	options[:ftp]      = config["stage"]["ftp"];
+	options[:username] = config["stage"]["username"];
+	options[:password] = config["stage"]["password"];
+else
 	options[:ftp]      = config["pilot"]["ftp"];
 	options[:username] = config["pilot"]["username"];
 	options[:password] = config["pilot"]["password"];
