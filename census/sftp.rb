@@ -31,8 +31,7 @@ class Dapps
 		@sftp = Net::SFTP.start(ftp, username, :password => password);
 	end
 
-	def print(*args)
-		puts "got in!" if @sftp;
+	def print(args={})
 		DIRS.each do |f|
 			@sftp.dir.foreach(f) do |entry|
 				atim = Time.at(entry.attributes.atime); 
@@ -40,20 +39,19 @@ class Dapps
 				utc  = atim.strftime("%m/%d/%y %H:%M:%S");
 				local= Time.at(entry.attributes.atime-4*60*60).strftime("%m/%d/%y %H:%M:%S");
 				if entry.attributes.file?
-					if args.length == 0
-						printf "%s,%s,%s,%s\n",entry.name,f,utc,local;
-					else
+					if !args[:date].nil?
 						printf "%s,%s,%s,%s\n",entry.name,f,utc,local if args[:date] == atim.to_date;
+					elsif !args[:appid].nil?
+						entry.name =~ /^(\d+)_.*/;
+						printf "%s,%s,%s,%s\n",entry.name,f,utc,local if args[:appid] == $1;
+					else
+						printf "%s,%s,%s,%s\n",entry.name,f,utc,local;
 					end
 				end
 			end
 		end
 	end
 
-	def get_id(name)
-		name =~ /(\d+)_.*/;
-		return $1;
-	end
 
 	def get_payloads
 		DIRS.each do |f|
