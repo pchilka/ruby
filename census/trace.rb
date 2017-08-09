@@ -2,7 +2,7 @@ require 'net/sftp'
 require 'date'
 require 'optparse'
 require 'json'
-require './sftp'
+require_relative 'dapps'
 
 options = {:date => nil, :env => "pilot", :ftp => nil, :username => nil, :password => nil};
 
