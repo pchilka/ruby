@@ -50,10 +50,9 @@ class Dapps
 
 	def print_line(name,f,local)
 		printf "|%-90s|\n",rept("-",90);
-		printf "|%-10s : %-77s|\n", "File", name;
-		printf "|%-10s : %-77s|\n", "Folder", f;
-		printf "|%-10s : %-77s|\n", "Time", local;
-		printf "|%-90s|\n",rept("-",90);
+		printf "|File  : %-82s|\n", name;
+		printf "|Folder: %-57s Time : %16s|\n", f, local;
+		#printf "|%-10s : %-77s|\n", "Time", local;
 	end
 
 	def print_monitor(args={})
