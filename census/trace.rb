@@ -47,7 +47,7 @@ dapps = Dapps.new(options[:ftp],options[:username],options[:password]);
 if options[:monitor]
 	while true
 		system 'clear';
-		dapps.print :appid => options[:appid];
+		dapps.print_monitor :appid => options[:appid];
 		sleep 15;
 	end
 else

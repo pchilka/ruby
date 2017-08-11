@@ -52,16 +52,42 @@ class Dapps
 		end
 	end
 
+	def rept(char, number)
+		str = "";
+		number.times {str = str + char};
+		return str;
+	end
 
-	def get_payloads
+	def print_line(name,f,local)
+		printf "|%-90s|\n",rept("-",90);
+		printf "|%-10s : %-77s|\n", "File", name;
+		printf "|%-10s : %-77s|\n", "Folder", f;
+		printf "|%-10s : %-77s|\n", "Time", local;
+		printf "|%-90s|\n",rept("-",90);
+		#printf "%-60s|%-40s|%-20s\n",name,f,local;
+		#printf "%-60s|%-40s|%-20s\n",rept("-",60),rept("-",40),rept("-",20);
+	end
+
+	def print_monitor(args={})
 		DIRS.each do |f|
 			@sftp.dir.foreach(f) do |entry|
-				atime = Time.at(entry.attributes.atime); 
-				mtime = Time.at(entry.attributes.mtime); 
+				atim = Time.at(entry.attributes.atime); 
+				mtim = Time.at(entry.attributes.mtime); 
+				utc  = atim.strftime("%m/%d/%y %H:%M:%S");
+				local= Time.at(entry.attributes.atime-4*60*60).strftime("%m/%d/%y %H:%M:%S");
 				if entry.attributes.file?
-					app_id = get_id entry.name;
-				 	@payloads[app_id] =  @payloads[app_id].nil? ? [] : @payloads[app_id];
-#				 	@payloads[app_id] << Payload.new entry.name, atime, mtime;
+					if !args[:date].nil?
+						if args[:date] == atim.to_date
+							print_line entry.name, f, local;
+						end
+					elsif !args[:appid].nil?
+						entry.name =~ /^(\d+)_.*/;
+						if args[:appid] == $1
+							print_line entry.name, f, local;
+						end
+					else
+						print_line entry.name, f, local;
+					end
 				end
 			end
 		end
