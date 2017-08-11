@@ -4,7 +4,7 @@ require 'optparse'
 require 'json'
 require_relative 'dapps'
 
-options = {:date => nil, :env => "pilot", :ftp => nil, :username => nil, :password => nil};
+options = {:appid => nil, :date => nil, :monitor => false, :env => "pilot", :ftp => nil, :username => nil, :password => nil};
 
 OptionParser.new do |opts|
 	opts.banner = "Usage: ruby show.rb [options]";
@@ -13,6 +13,9 @@ OptionParser.new do |opts|
 	end
 	opts.on("-d", "--date date", "Specify date to filter, e.g. -d \"2017-08-04\"") do |date|
 		options[:date] = Date.parse(date);
+	end
+	opts.on("-m", "--monitor", "Monitor the traffic") do
+		options[:monitor] = true;
 	end
 	opts.on("-p", "--pilot", "Specify pilot environment [default]") do
 		options[:env] = "pilot";
@@ -41,13 +44,13 @@ end
 
 dapps = Dapps.new(options[:ftp],options[:username],options[:password]);
 
-while true
-	system 'clear';
-	if options[:appid].nil?
-		dapps.print;
-	else
+if options[:monitor]
+	while true
+		system 'clear';
 		dapps.print :appid => options[:appid];
+		sleep 15;
 	end
-	sleep 15;
+else
+	dapps.print :appid => options[:appid];
 end
 
