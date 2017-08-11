@@ -69,6 +69,7 @@ class Dapps
 	end
 
 	def print_monitor(args={})
+		lines = [];
 		DIRS.each do |f|
 			@sftp.dir.foreach(f) do |entry|
 				atim = Time.at(entry.attributes.atime); 
@@ -78,18 +79,24 @@ class Dapps
 				if entry.attributes.file?
 					if !args[:date].nil?
 						if args[:date] == atim.to_date
-							print_line entry.name, f, local;
+							lines << [entry.name, f, atim];
 						end
 					elsif !args[:appid].nil?
 						entry.name =~ /^(\d+)_.*/;
 						if args[:appid] == $1
-							print_line entry.name, f, local;
+							lines << [entry.name, f, atim];
 						end
 					else
-						print_line entry.name, f, local;
+							lines << [entry.name, f, atim];
 					end
 				end
 			end
+		end
+		# now sort it
+		lines_sorted = lines.sort {|a,b| a[2] <=> b[2]};
+		lines_sorted.each do |x| 
+			local= Time.at(x[2]-4*60*60).strftime("%m/%d/%y %H:%M:%S");
+			print_line x[0], x[1], local;
 		end
 	end
 end
