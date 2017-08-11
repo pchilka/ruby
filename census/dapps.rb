@@ -17,8 +17,6 @@ DIRS = ["Applicant/Packages",
 	
 class Dapps
 	
-	@payloads = {};
-
 	def initialize(ftp, username, password)
 		@sftp = Net::SFTP.start(ftp, username, :password => password);
 	end
@@ -56,8 +54,6 @@ class Dapps
 		printf "|%-10s : %-77s|\n", "Folder", f;
 		printf "|%-10s : %-77s|\n", "Time", local;
 		printf "|%-90s|\n",rept("-",90);
-		#printf "%-60s|%-40s|%-20s\n",name,f,local;
-		#printf "%-60s|%-40s|%-20s\n",rept("-",60),rept("-",40),rept("-",20);
 	end
 
 	def print_monitor(args={})
@@ -76,7 +72,7 @@ class Dapps
 							lines << [entry.name, f, atim];
 						end
 					else
-							lines << [entry.name, f, atim];
+						lines << [entry.name, f, atim];
 					end
 				end
 			end
