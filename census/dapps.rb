@@ -15,14 +15,6 @@ DIRS = ["Applicant/Packages",
 	"Applicant/Updates/Response/Completed"];
 
 	
-class Payload
-	def initialize(name, atime, mtime)
-		@name  = name;
-		@atime = atime;
-		@mtime = mtime;
-	end
-end
-
 class Dapps
 	
 	@payloads = {};
@@ -54,7 +46,7 @@ class Dapps
 
 	def rept(char, number)
 		str = "";
-		number.times {str = str + char};
+		number.times {str << char};
 		return str;
 	end
 
@@ -73,9 +65,6 @@ class Dapps
 		DIRS.each do |f|
 			@sftp.dir.foreach(f) do |entry|
 				atim = Time.at(entry.attributes.atime); 
-				mtim = Time.at(entry.attributes.mtime); 
-				utc  = atim.strftime("%m/%d/%y %H:%M:%S");
-				local= Time.at(entry.attributes.atime-4*60*60).strftime("%m/%d/%y %H:%M:%S");
 				if entry.attributes.file?
 					if !args[:date].nil?
 						if args[:date] == atim.to_date
