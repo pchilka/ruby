@@ -1,4 +1,6 @@
-require './trello.rb'
+$LOAD_PATH.unshift('.')
+
+require 'trello'
 require 'pp'
 
 Trello.new("ZReu15ar").get_cards.each do |card|
