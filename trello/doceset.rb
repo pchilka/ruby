@@ -1,9 +1,7 @@
 require './trello.rb'
 require 'pp'
 
-t = Trello.new("ZReu15ar")
-
-t.get_cards.each do |card|
+Trello.new("ZReu15ar").get_cards.each do |card|
 	name      = card["name"]
 	due       = card["due"]
 	label_mpp = ""
