@@ -3,7 +3,7 @@ $LOAD_PATH.unshift('.')
 require 'trello'
 require 'pp'
 
-Trello.new("ZReu15ar").get_cards.each do |card|
+Trello.new("ZReu15ar").cards.each do |card|
 	name      = card["name"]
 	due       = card["due"]
 	label_mpp = ""

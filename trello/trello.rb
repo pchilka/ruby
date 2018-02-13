@@ -7,7 +7,8 @@ TRELLO_API_URL   = "https://api.trello.com/1"
 
 
 class Trello
-
+	attr_reader :cards
+	attr_reader :lists
 	def initialize(boardid)
 		@cards_url = "#{TRELLO_API_URL}/boards/"          + \
 			"#{boardid}/cards?filter=all&key=#{TRELLO_KEY}" + \
@@ -18,13 +19,5 @@ class Trello
 			"&token=#{TRELLO_TOKEN}"
 		@cards = JSON.parse RestClient.get @cards_url
 		@lists = JSON.parse RestClient.get @lists_url
-	end
-
-	def get_cards
-		@cards
-	end
-
-	def get_lists
-		@lists
 	end
 end
