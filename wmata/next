@@ -1,0 +1,2 @@
+#!/bin/bash -f
+curl -X GET "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/K08" -H "api_key: 8570cea1dbde47c9a12484beb9bd126d" 
